@@ -24,10 +24,10 @@ window.addEventListener('scroll', () => {
 // });
 
 const hamburger = document.querySelector('.hamburger');
-const navbar = document.querySelector('.nav-links');
+const navbar = document.querySelector('.navbar');
 
 hamburger.addEventListener('click', () => {
-    navbar.classList.toggle('active');
+    navbar.classList.toggle('d-flex');
 });
 
 
@@ -105,3 +105,5 @@ fetch('https://fakestoreapi.com/products')
     });
   })
   .catch(error => console.error('Error fetching data:', error));
+
+  
