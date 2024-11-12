@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <!-- fontawesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        <div class="logo">
+            <a href="#">Venia</a>
+        </div>
+        <nav class="navbar">   
+             <ul class="nav-links">
+               <li><a href="#">Home</a></li>
+               <li><a href="#">Women</a></li>
+               <li><a href="#">Men</a></li>
+               <li><a href="#">Electronics</a></li>
+               <li><a href="#">Jewellery</a></li>
+             </ul>
+        </nav>
+        <div class="header__cart">
+            <a href="#cart" class="header__cart-link">
+                <i class="fas fa-shopping-cart header__cart-icon"></i> 
+            </a>
+        </div>
+    </header>
+    <section class="slider-container">
+        <div class="slider">
+          <div class="slide active">
+            <img src="images/banner-1.jpg" alt="Slide 1">
+            <div class="slide-text">
+              <h2>Discover Our New Collection</h2>
+              <p>Experience elegance and style with our latest arrivals.</p>
+              <button class="btn btn-primary btn-mt">SHOP NOW</button>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="images/banner-2.jpg" alt="Slide 2">
+            <div class="slide-text">
+              <h2>Fashion Redefined</h2>
+              <p>Upgrade your wardrobe with our exclusive designs.</p>
+              <button class="btn btn-primary btn-mt">SHOP NOW</button>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="images/banner-3.jpg" alt="Slide 3">
+            <div class="slide-text">
+              <h2>Shop Now</h2>
+              <p>Find your perfect fit and unique style.</p>
+              <button class="btn btn-primary btn-mt">SHOP NOW</button>
+            </div>
+          </div>
+        </div>
+        <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+        <div class="slider-dots"></div>
+      </section>
+      <section class="card-container" id="card-container">
+        <!-- Cards will be dynamically inserted here -->
+      </section>
+      <section class="collection">
+        <div class="collection-container">
+          <!-- Left Column -->
+          <div class="column6 collection-text">
+            <h2>Take off in the new Signature Legging</h2>
+            <h4>Lorem Ipsum Dolor Tempor</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore dolore magna lorem ipsum dolor sit dolore magna lorem ipsum dolor sit amet.</p>
+            <div class="buttons">
+              <button href="#" class="btn btn-primary">SHOP NOW</button>
+              <button href="#" class="btn btn-primary-outline mt-2">SHOP COLLECTION</button>
+            </div>
+          </div>
+    
+          <!-- Right Column -->
+          <div class="collection-image column6">
+            <img src="images/collection.jpg" alt="Image 1" class="image">
+          </div>
+        </div>
+      </section>
+      <section class="adventure">
+        <div class="adventure-container">
+           
+          <div class="adventure-image column8">
+            <img src="images/adventure.jpg" alt="Image 1" class="image">
+          </div>
+        
+          <div class="adventure-text column4">
+            <h2>Conquer your next adventure</h2>
+            <h4>Lorem Ipsum Dolor Tempor</h4>
+            <button href="#" class="btn btn-white-outline mt-2">SHOP DEVICES</button>
+          </div>          
+        </div>
+        <div class="adventure-icons">
+            <i class="fa-solid fa-location-dot"></i>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Account</h4>
+                <ul>
+                    <li><a href="#">Sign In</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Order Status</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Order Status</a></li>
+                    <li><a href="#">Returns</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Follow Us!</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="logo">VENIA</div>
+            <p>© Company Name Address Ave, City Name, State ZIP</p>
+            <div class="footer-links">
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

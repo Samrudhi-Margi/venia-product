@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+:root {
+    --color-primary: #47B5FF;
+    --color-secondary: #06283D;
+    --color-primary-brand: #1363DF;
+    --color-primary-light: #DFF6FF;
+    --color-gray-dark1: #181C24;
+    --color-gray-dark2: #535965;
+    --color-gray-dark3: #91959C;
+    --color-gray-light1: #B5B7BC;
+    --color-gray-light2: #E5E5E7;
+    --color-white: #FFFFFF;
+    --font-primary: "Source Serif 4", serif;
+    --font-secondary: "Mulish", sans-serif;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-5);
+}
+
+.btn-mt {
+  margin-top: 20px;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1rem;
+    background-color: var(--color-primary-brand);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary-brand);
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary-brand);
+    border: 1px solid var(--color-primary-brand);
+    transition: background-color 0.3s ease;
+  }
+  .btn-primary-outline {
+    background-color: var(--color-white);
+    color: var(--color-primary-brand);
+    border: 1px solid var(--color-primary-brand);
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary-outline:hover {
+    background-color: var(--color-primary-brand);
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  .btn-white-outline {
+    background-color: transparent;
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-white-outline:hover {
+    background-color: var(--color-primary-brand);
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+
+  
+
+/* menu css */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #010101;
+    background-color: var(--color-primary-brand);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    position: relative;
+    width: 100%;
+  }
+  
+  header.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--color-primary-brand);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--color-white);
+    border-radius: 2px;
+  }
+  
+  .logo a {
+    font-size: 1.5rem;
+    color: var(--color-white);
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-family: var(--font-secondary);
+    text-decoration: none;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#1363DF;
+    padding: 15px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: 1rem;
+    line-height: 2rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #d8953c;
+  }
+  
+  .header__cart {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header__cart-link {
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    margin-left: 20px;
+  }
+  
+  .header__cart-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+  
+  /* slider */
+  /* Slider container */
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Slide styling */
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    min-width: 100%;
+    position: relative;
+  }
+  
+  .slide img {
+    width: 100%;
+    display: block;
+  }
+  
+  .slide-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  .slide-text h2 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  .slide-text p {
+    font-size: 1rem;
+    margin: 5px 0 0;
+  }
+  
+  /* Add this to your existing CSS */
+  .slide {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .slide.active {
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  /* Navigation buttons */
+  .prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+  
+  /* Dot navigation styling */
+  .slider-dots {
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  
+  .slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+  }
+  
+  .slider-dot.active {
+    background-color: #fff;
+  }
+  
+  
+ /* cards */
+ .card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Block: card */
+  .card {
+    position: relative; /* Ensures the child elements can be positioned relative to this card */
+    background-color: transprent;
+    /* border-radius: 8px; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Default width for larger screens */
+    height: 350px; /* Set a fixed height for the card */
+    overflow: hidden; /* Prevents overflow of the content */
+    border-bottom: 8px solid var(--color-primary-brand); 
+    margin-bottom: 20px;
+  }
+  
+  /* Element: image inside the card */
+  .card__image {
+    position: absolute; /* Position the image absolutely */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 60%; Occupy the top 60% of the card */
+    object-fit: cover; /* Ensures the image covers the area */
+    z-index: -1; /* Puts the image behind the text */
+  }
+  
+  /* Element: content area inside the card */
+  .card__content {
+    position: absolute;
+    bottom: 0; /* Positions the content at the bottom */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: white;
+    padding: 10px 30px;
+    text-align: left;
+  }
+  
+  /* Element: title inside the card */
+  .card__title {
+    font-size: 18px;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  
+  /* Element: description inside the card */
+  .card__description {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  /* collection */
+  /* Section styling */
+  .collection,
+  .adventure
+  {
+    padding: 50px 20px;
+    background-color: #ffffff;
+    position: relative;
+  }
+
+
+  /* Left Column styling */
+
+
+  .collection-container,
+  .adventure-container 
+  {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap when the container is smaller */
+    /* gap: 20px; */
+    justify-content: space-between;
+  }
+
+  .collection-container::after {
+    content: "";
+    width: 78px;
+    height: 8px;
+    background-color: var(--color-primary-brand);
+    bottom: 1%;
+    position: absolute;
+    left: 36%;
+  }
+  .adventure-icons {
+    width: 78px;
+    height: 53px;
+    /* background-color: var(--color-primary-brand); */
+    bottom: 11%;
+    position: absolute;
+    right: 30%;
+    border-bottom: 8px solid var(--color-primary-brand);
+  }
+  
+  .adventure-icons i {
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-white);
+  }
+
+  .collection-text h2,
+  .adventure-text h2
+  {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .collection-text p,
+  .adventure-text p
+   {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 20px;
+  }
+
+  /* Right Column styling */
+  .collection-image {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .collection-image img {
+
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .adventure-text {
+    background-color: #1B252C;
+    color: white;
+    padding: 50px;
+    text-align: left;
+}
+
+/* footer */
+.footer {
+  background-color: #f8f9fa;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+  border-top: 1px solid #e6e6e6;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  margin-bottom: 20px;
+}
+
+.footer-section h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #1363DF; /* or your primary color */
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  color: #333;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #1363DF;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.footer-bottom .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.footer-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #1363DF;
+}

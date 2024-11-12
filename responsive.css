@@ -1,0 +1,119 @@
+/* Base styles are linked in style.css */
+
+/* Mobile - 320px */
+@media screen and (max-width: 320px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .slider .slide-text h2 {
+        font-size: 1.25rem;
+    }
+
+    .slider .slide-text p {
+        font-size: 0.875rem;
+    }
+
+    .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* Tablet - 768px */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+    }
+
+    .collection-container,
+    .adventure-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column6, .column8, .column4 {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .slider .slide img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Desktop Small - 1024px */
+@media screen and (max-width: 1024px) {
+    .header {
+        padding: 1rem 2rem;
+    }
+
+    .column6, .column8, .column4 {
+        padding: 0 1rem;
+    }
+}
+
+/* Desktop Medium - 1280px */
+@media screen and (max-width: 1280px) {
+    .collection-text h2 {
+        font-size: 2rem;
+    }
+
+    .adventure-text h2 {
+        font-size: 1.75rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Desktop Large - 1440px */
+@media screen and (max-width: 1440px) {
+    .collection-text h2 {
+        font-size: 2.25rem;
+    }
+
+    .adventure-text h2 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Desktop X-Large - 1920px */
+@media screen and (max-width: 1920px) {
+    .collection-container, .adventure-container {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .header {
+        padding: 1.5rem 3rem;
+    }
+}
