@@ -24,7 +24,7 @@ window.addEventListener('scroll', () => {
 // });
 
 const hamburger = document.querySelector('.hamburger');
-const navbar = document.querySelector('.navbar');
+const navbar = document.querySelector('.nav-links');
 
 hamburger.addEventListener('click', () => {
     navbar.classList.toggle('active');

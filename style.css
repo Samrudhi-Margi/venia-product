@@ -24,7 +24,40 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font-secondary);
-    font-size: var(--font-size-5);
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+main {
+  height: 100vh;
+}
+
+.column6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+.column8 {
+  flex: 0 0 auto;
+  width: 66.66666667%;
+}
+
+.column4 {
+  flex: 0 0 auto;
+  width: 33.33333333%;
+} 
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 0.75rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .btn-mt {
@@ -32,7 +65,7 @@ body {
 }
 
 .btn {
-    padding: 15px 30px;
+    padding: 10px 30px;
     font-size: 1rem;
     background-color: var(--color-primary-brand);
     color: white;
@@ -83,16 +116,16 @@ body {
 
 /* menu css */
 header {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #010101;
+    background-color: #010101; */
     background-color: var(--color-primary-brand);
     transition: all 0.3s ease;
-    z-index: 1000;
+    /* z-index: 1000;
     position: relative;
-    width: 100%;
+    width: 100%; */
   }
   
   header.sticky {
@@ -114,6 +147,7 @@ header {
     height: 3px;
     background-color: var(--color-white);
     border-radius: 2px;
+    transition: 0.3s;
   }
   
   .logo a {
@@ -150,6 +184,11 @@ header {
     transition: color 0.3s;
   }
   
+
+  .nav-links.active a {
+    color: var(--color-gray-dark1);
+  }
+
   .nav-links a:hover {
     color: #d8953c;
   }
@@ -189,6 +228,7 @@ header {
   .slide {
     min-width: 100%;
     position: relative;
+    height: 500px;
   }
   
   .slide img {
@@ -198,22 +238,27 @@ header {
   
   .slide-text {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.5);
+    top: 18%;
+    left: 7%;
+    color: var(--color-gray-dark1);
+    /* background: rgba(0, 0, 0, 0.5); */
     padding: 10px 20px;
     border-radius: 5px;
+    width: 40%;
   }
   
   .slide-text h2 {
-    font-size: 2rem;
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    line-height: 4rem;
     margin: 0;
   }
   
   .slide-text p {
     font-size: 1rem;
     margin: 5px 0 0;
+    line-height: 1.5rem;
+    
   }
   
   /* Add this to your existing CSS */
@@ -230,7 +275,7 @@ header {
   }
   
   /* Navigation buttons */
-  .prev-btn, .next-btn {
+  /* .prev-btn, .next-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -249,7 +294,31 @@ header {
   .next-btn {
     right: 10px;
   }
-  
+   */
+   .arrows{
+    width: 28px;
+    height: 28px;
+    border-color: #535965;
+    position: absolute;
+    top: 50%;
+    margin-top: -31px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+ }
+ .prev{
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    transform: rotate(45deg);
+    left: 40px;
+ 
+    }
+ .next{
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    transform: rotate(-135deg);
+    right: 40px;
+ }
   /* Dot navigation styling */
   .slider-dots {
     text-align: center;
@@ -265,12 +334,12 @@ header {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(102, 102, 102, 0.3);
     cursor: pointer;
   }
   
   .slider-dot.active {
-    background-color: #fff;
+    background-color: rgba(102, 102, 102, 1);
   }
   
   
@@ -360,9 +429,9 @@ header {
     width: 78px;
     height: 8px;
     background-color: var(--color-primary-brand);
-    bottom: 1%;
+    bottom: 25%;
     position: absolute;
-    left: 36%;
+    left: 19%;
   }
   .adventure-icons {
     width: 78px;
@@ -388,6 +457,7 @@ header {
     font-size: 32px;
     font-weight: 500;
     margin-bottom: 20px;
+    line-height: 48px;
   }
 
   .collection-text p,
@@ -403,6 +473,9 @@ header {
     gap: 20px;
   }
 
+  .adventure, .adventure-image {
+    padding: 0;
+}
   /* Right Column styling */
   .collection-image {
     display: flex;
@@ -425,6 +498,7 @@ header {
     color: white;
     padding: 50px;
     text-align: left;
+    margin-top: -15px;
 }
 
 /* footer */
@@ -490,11 +564,12 @@ header {
 .footer-bottom {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid #e6e6e6;
+  width: 100%;
 }
 
 .footer-bottom .logo {
