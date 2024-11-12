@@ -482,9 +482,9 @@ header {
     flex-direction: column;
     gap: 20px;
   }
-  .collection-image img {
+  /* .collection-image img {
 
-  }
+  } */
 
   .image {
     width: 100%;
