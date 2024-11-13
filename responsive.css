@@ -2,9 +2,17 @@
 
 /* Desktop X-Large - 1920px */
 @media screen and (max-width: 1920px) {
-    .collection-container, .adventure-container {
+    .collection-container, .adventure-container,  .innerSection-container {
         max-width: 1200px;
         margin: auto;
+    }
+    .slide-text h2 {
+        font-size: 58px;
+        line-height: 74px;
+    }
+    .slide-text p {
+        font-size: 24px;
+        line-height: 36px;
     }
 
     /* .header {
@@ -18,11 +26,12 @@
     .container{
         max-width: 1320px;
     }
-    .collection-text h2 {
+    /* .collection-text h2 {
         font-size: 2.25rem;
-    }
+    } */
 
-    .adventure-text h2 {
+    .adventure-text h2,
+    .innerSection-text h2 {
         font-size: 2rem;
     }
 
@@ -38,11 +47,12 @@
     .container{
         max-width: 1140px;
     }
-    .collection-text h2 {
+    /* .collection-text h2 {
         font-size: 2rem;
-    }
+    } */
 
-    .adventure-text h2 {
+    .adventure-text h2,
+    .innerSection-text h2 {
         font-size: 1.75rem;
     }
 
@@ -50,6 +60,7 @@
         padding: 0.6rem 1.2rem;
         font-size: 0.9rem;
     }
+    
 }
 
 /* Desktop Small - 1024px */
@@ -65,10 +76,65 @@
         padding: 0 1rem;
     }
     .slide-text{
-        top: 8%;
+        top: 16%;
     }
-    .adventure, .adventure-image {
+    .btn {
+       margin-top: 10px;
+    }
+    .collection, .collection-image,
+    .adventure, .adventure-image,
+    .innerSection, .innerSection-image {
         padding: 0;
+    }
+    .card {
+        width: 100%; 
+        margin-top: 0;
+      }
+      .collection-text {
+        margin-bottom: 30px;
+    }
+      .collection-container::after {
+        content: "";
+        bottom: 20%;
+        left: 2%;
+    }
+    .adventure-icons {
+        bottom: 5%;
+        right: 29.5%;
+    }
+    .slide-text h2 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .slide-text p {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .collection-text {
+        margin-bottom: 30px;
+    }
+      .collection-container::after {
+        content: "";
+        bottom: 0%;
+        left: 3%;
+    }
+    .adventure-icons {
+        bottom: 5%;
+        right: 28%;
+    }
+    .slide-text h2 {
+        font-size: 24px;
+        line-height: 34px;
+    }
+    .slide-text p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .slide-text{
+        top: 7%;
     }
 }
 
@@ -161,16 +227,27 @@
         top: auto;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 60%);
     }
-    .collection-image {
+    .collection-image
+     {
         order: 1;
     }
     .collection-text {
+        text-align: center;
         order: 2;
     }
     .buttons {
-        display: block;
+        display: grid;
         text-align: center;
         margin: 0 auto;
+        width: 70%;
+    }
+    .buttons .btn-collection {
+        order: 2;
+        display: block;
+    }
+    .buttons .btn-shop {
+        order: 1;
+        display: block;
     }
     .mt-2 {
         margin-top: 20px;
@@ -185,10 +262,10 @@
         text-align: center;
     }
     .adventure-icons {
-        width: 78px;
-        height: 53px;
+        width: 102px;
+        /* height: 53px; */
         /* background-color: var(--color-primary-brand); */
-        bottom: 61%;
+        bottom: 41%;
         position: absolute;
         left: 10%;
         border-bottom: 8px solid var(--color-primary-brand);
@@ -198,6 +275,47 @@
         line-height: 2.5rem;
         margin-top: 4rem;
     }
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+      .slider-dots {
+        display: flex;
+      }
+
+      .footer-container {
+        gap: 0;
+      }
+
+      .footer-section,
+      .footer-section h4,
+      .footer-section ul,
+      .footer-section li {
+        margin-bottom: 0;
+      }
+      .collection {
+        padding: 50px 0;
+      }
+      .collection-container::after {
+        content: "";
+        bottom: 2%;
+        left: 37%;
+    }
+
+   
+    
 }
 
+    
+@media screen and (max-width: 480px) {
+    .adventure-icons {
+        bottom: 55%;
+        left: 7%;
+    }
+    .collection-container::after {
+        content: "";
+        bottom: 1%;
+        left: 41%;
+    }
+}
     

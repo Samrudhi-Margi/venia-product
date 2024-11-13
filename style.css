@@ -45,20 +45,6 @@ body {
 .column11 { flex: 0 0 auto; width: 91.66666667%; } 
 .column12 { flex: 0 0 auto; width: 100%; } 
 
-.column4 {
-  flex: 0 0 auto;
-  width: 33.33333333%;
-} 
-
-.column6 {
-  flex: 0 0 auto;
-  width: 50%;
-}
-.column8 {
-  flex: 0 0 auto;
-  width: 66.66666667%;
-}
-
 
 .container {
   width: 100%;
@@ -144,6 +130,7 @@ header {
     /* z-index: 1000;
     position: relative;
     width: 100%; */
+    z-index: 99;
   }
   
   header.sticky {
@@ -211,6 +198,16 @@ header {
     color: #d8953c;
   }
   
+  .nav-links li a {
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  .nav-links li a.active {
+    border-bottom: 5px solid white;
+    padding: 0px 10px 30px 10px;
+  }
+
   .header__cart {
     display: flex;
     align-items: center;
@@ -220,7 +217,6 @@ header {
     text-decoration: none;
     color: var(--color-white);
     font-size: 1.5rem;
-    margin-left: 20px;
   }
   
   .header__cart-icon {
@@ -246,7 +242,7 @@ header {
   .slide {
     min-width: 100%;
     position: relative;
-    height: 500px;
+    /* height: 500px; */
   }
   
   .slide img {
@@ -261,14 +257,13 @@ header {
     color: var(--color-gray-dark1);
     /* background: rgba(0, 0, 0, 0.5); */
     padding: 10px 20px;
-    border-radius: 5px;
     width: 40%;
   }
   
   .slide-text h2 {
     font-family: var(--font-primary);
-    font-size: 3rem;
-    line-height: 4rem;
+    font-size: 48px;
+    line-height: 64px;
     margin: 0;
   }
   
@@ -345,13 +340,13 @@ header {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
+    display: none;
     gap: 10px;
   }
   
   .slider-dot {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background-color: rgba(102, 102, 102, 0.3);
     cursor: pointer;
@@ -363,62 +358,70 @@ header {
   
   
  /* cards */
+ /* Main container for the cards */
  .card-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+.card-container .row{
+  justify-content: center;
+  gap:10px;
   
-  /* Block: card */
-  .card {
-    position: relative; /* Ensures the child elements can be positioned relative to this card */
-    background-color: transprent;
-    /* border-radius: 8px; */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 250px; /* Default width for larger screens */
-    height: 350px; /* Set a fixed height for the card */
-    overflow: hidden; /* Prevents overflow of the content */
-    border-bottom: 8px solid var(--color-primary-brand); 
-    margin-bottom: 20px;
-  }
-  
-  /* Element: image inside the card */
-  .card__image {
-    position: absolute; /* Position the image absolutely */
-    top: 0;
-    left: 0;
-    width: 100%;
-    /* height: 60%; Occupy the top 60% of the card */
-    object-fit: cover; /* Ensures the image covers the area */
-    z-index: -1; /* Puts the image behind the text */
-  }
-  
-  /* Element: content area inside the card */
-  .card__content {
-    position: absolute;
-    bottom: 0; /* Positions the content at the bottom */
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+}
+
+/* Styling for individual cards */
+.card {
+  background-color: #ffffff;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(25% - 20px); /* Four cards per row with gap */
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-top: -60px;
+ 
+}
+
+/* Card image styling */
+.card__image {
+  width: 100%;
+  height: 250px; /* Adjusted height for better visibility */
+  object-fit: contain; /* Ensure the image covers the card area */
+  padding: 10px 0;
+}
+
+/* Content area inside the card */
+.card__content {
+  padding: 15px;
+  text-align: center;
+  flex-grow: 1;
+  background-color:rgb(27 37 44 / 85%);
     color: white;
-    padding: 10px 30px;
-    text-align: left;
-  }
-  
-  /* Element: title inside the card */
-  .card__title {
-    font-size: 18px;
-    margin: 0;
-    text-transform: uppercase;
-  }
-  
-  /* Element: description inside the card */
-  .card__description {
-    font-size: 14px;
-    margin-top: 5px;
-  }
+    border-bottom: 5px solid var(--color-primary-brand);
+}
+
+.card__title {
+  font-size: 18px;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.card__description {
+  font-size: 14px;   
+  line-height: 20px;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+
   
   /* collection */
   /* Section styling */
@@ -433,7 +436,9 @@ header {
 
 
   /* Left Column styling */
-
+  .collection-container {
+    position: relative;
+  }
 
   .collection-container,
   .adventure-container,
@@ -450,20 +455,24 @@ header {
     width: 78px;
     height: 8px;
     background-color: var(--color-primary-brand);
-    bottom: 25%;
+    bottom: 47%;
     position: absolute;
-    left: 19%;
+    left: 0%;
   }
   .adventure-icons {
     width: 78px;
-    height: 53px;
+    /* height: 53px; */
     /* background-color: var(--color-primary-brand); */
     bottom: 11%;
     position: absolute;
     right: 30%;
     border-bottom: 8px solid var(--color-primary-brand);
+    text-align: center;
   }
   
+  .adventure-icons svg{
+    width: 50px;
+  }
   .adventure-icons i {
     font-size: 3rem;
     display: flex;
@@ -471,14 +480,22 @@ header {
     align-items: center;
     color: var(--color-white);
   }
+  .collection-text {
+    text-align: start;
+  }
 
   .collection-text h2,
   .adventure-text h2
   {
-    font-size: 32px;
+    font-size: 35px;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     line-height: 48px;
+    font-family: var(--font-primary);
+  }
+  .collection-text h4{
+    margin:0;
+    padding: 0;
   }
 .innerSection-text h2 {
     font-size: 32px;
@@ -509,7 +526,18 @@ header {
     gap: 20px;
   }
 
-  .adventure, .adventure-image {
+  .buttons .btn-collection {
+    order: 1;
+    display: block;
+}
+.buttons .btn-shop {
+    order: 2;
+    display: block;
+}
+
+  .adventure, .adventure-image,
+  .innerSection .innerSection-image
+  {
     padding: 0;
 }
   /* Right Column styling */
@@ -526,6 +554,13 @@ header {
     width: 100%;
     height: 350px;
   }
+
+  .innerSection-image .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .image {
     width: 100%;
     height: auto;
@@ -537,7 +572,7 @@ header {
     background-color: #1B252C;
     color: white;
     padding: 50px;
-    text-align: left;
+    text-align: center;
     margin-top: -15px;
 }
 

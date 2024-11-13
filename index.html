@@ -24,8 +24,8 @@
         </div>
         <nav class="navbar">   
              <ul class="nav-links">
-               <li><a href="#">Home</a></li>
-               <li><a href="#">Women</a></li>
+               <li><a href="#" class="active">Home</a></li>
+               <li><a href="category.html">Women</a></li>
                <li><a href="#">Men</a></li>
                <li><a href="#">Electronics</a></li>
                <li><a href="#">Jewellery</a></li>
@@ -33,7 +33,9 @@
         </nav>
         <div class="header__cart">
             <a href="#cart" class="header__cart-link">
-                <i class="fas fa-shopping-cart header__cart-icon"></i> 
+                <!-- <i class="fas fa-shopping-cart header__cart-icon"></i>  -->
+                 <!-- <img src="images/shopping_bag_icon.svg" alt="cart"> -->
+                 <?xml version="1.0" ?><svg class="feather feather-shopping-bag" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
             </a>
         </div>
         </div>
@@ -71,26 +73,30 @@
         <button class="arrows prev" onclick="changeSlide(-1)"></button>
         <button class="arrows next" onclick="changeSlide(1)"></button>
         <div class="slider-dots"></div>
-      </section>
-      <section class="card-container" id="card-container">
-      </section>
-      <section class="collection">
+    </section>
+    <section class="card-container" >
+      <div class="container">
+        <div class="row" id="card-container">
+        </div>
+      </div>
+    </section>
+    <section class="collection">
         <div class="collection-container">
           <div class="column6 collection-text">
             <h2>Take off in the new Signature Legging</h2>
             <h4>Lorem Ipsum Dolor Tempor</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore dolore magna lorem ipsum dolor sit dolore magna lorem ipsum dolor sit amet.</p>
             <div class="buttons">
-              <button href="#" class="btn btn-primary-outline mt-2">SHOP COLLECTION</button>
-              <button href="#" class="btn btn-primary">SHOP NOW</button>
+              <button href="#" class="btn btn-primary-outline btn-collection">SHOP COLLECTION</button>
+              <button href="#" class="btn btn-primary btn-shop">SHOP NOW</button>
             </div>
           </div>
           <div class="collection-image column6">
             <img src="images/collection.jpg" alt="Image 1" class="image">
           </div>
         </div>
-      </section>
-      <section class="adventure">
+    </section>
+    <section class="adventure">
         <div class="adventure-container">
           <div class="adventure-image column8">
             <img src="images/adventure.jpg" alt="Image 1" class="image">
@@ -102,10 +108,11 @@
           </div>          
         </div>
         <div class="adventure-icons">
-            <i class="fa-solid fa-location-dot"></i>
+            <!-- <i class="fa-solid fa-location-dot"></i> -->
+            <?xml version="1.0" ?><svg data-name="Layer 1" id="Layer_1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1,.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:1px;}.cls-1{stroke:#ffffff;}.cls-2{stroke:#ffffff;}</style></defs><title/><path class="cls-1" d="M26.5,12.5C26.5,18.3,16,30,16,30S5.5,18.3,5.5,12.5a10.5,10.5,0,0,1,21,0Z"/><circle class="cls-2" cx="16" cy="11.8" r="2.8"/></svg>
         </div>
-      </section>
-      <footer class="footer">
+    </section>
+    <footer class="footer">
         <div class="container">
           <div class="row">
             <div class="footer-container">
