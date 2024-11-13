@@ -2,7 +2,7 @@
 
 /* Desktop X-Large - 1920px */
 @media screen and (max-width: 1920px) {
-    .collection-container, .adventure-container,  .innerSection-container {
+    .collection-container, .adventure-container {
         max-width: 1200px;
         margin: auto;
     }
@@ -72,7 +72,18 @@
         padding: 1rem 2rem;
     } */
 
-    .column6, .column8, .column4 {
+    .column1, 
+    .column2, 
+    .column3,
+    .column4,
+    .column5,
+    .column6,
+    .column7,
+    .column8,
+    .column9,
+    .column10,
+    .column11,  
+    .column12  {
         padding: 0 1rem;
     }
     .slide-text{
@@ -110,6 +121,14 @@
         font-size: 18px;
         line-height: 28px;
     }
+
+    .innerSection-text {
+        padding: 0px 100px;
+    }
+    .innerSection-text h2::after {
+        bottom: 24%;
+        left: 13%;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -135,6 +154,20 @@
     }
     .slide-text{
         top: 7%;
+    }
+    .innerSection-text {
+        padding: 0px 20px;
+    }
+    .innerSection-text h2::after {
+        bottom: 15%;
+        left: 12%;
+    }
+    .innerSection-text h2 {
+        font-size: 28px;
+        line-height: 38px;
+    }
+    #products {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -194,7 +227,18 @@
         align-items: center;
     }
 
-    .column6, .column8, .column4 {
+    .column1, 
+    .column2, 
+    .column3,
+    .column4,
+    .column5,
+    .column6,
+    .column7,
+    .column8,
+    .column9,
+    .column10,
+    .column11,  
+    .column12  {
         width: 100%;
         padding: 0 1rem;
     }
@@ -301,8 +345,31 @@
         bottom: 2%;
         left: 37%;
     }
+    .innerSection-image {
+        padding: 0;
+    }
+    .innerSection-text {
+        order: 2;
+        width: 390px;
+        margin: -40px 20px 0 20px;
+        padding: 20px 90px 50px 90px;
+    }
 
-   
+    .innerSection-text h2::after {
+        bottom: 13%;
+        left: 42%;
+    }
+
+    .innerSection-text h2 {
+        margin: 0;
+    }
+    .top-bar {
+        justify-content: center;
+        gap: 0 40px;
+    }
+    #products {
+        grid-template-columns: repeat(1, 1fr);
+    }
     
 }
 

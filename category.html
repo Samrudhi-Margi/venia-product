@@ -12,98 +12,106 @@
 </head>
 <body>
     <header class="header">
-      <div class="container">
-        <div class="row">
-          <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="container">
+          <div class="row">
+            <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+          <div class="logo">
+              <a href="#">Venia</a>
+          </div>
+          <nav class="navbar">   
+               <ul class="nav-links">
+                 <li><a href="index.html">Home</a></li>
+                 <li><a href="category.html" class="active">Women</a></li>
+                 <li><a href="#">Men</a></li>
+                 <li><a href="#">Electronics</a></li>
+                 <li><a href="#">Jewellery</a></li>
+               </ul>
+          </nav>
+          <div class="header__cart">
+              <a href="#cart" class="header__cart-link">
+                  <!-- <i class="fas fa-shopping-cart header__cart-icon"></i>  -->
+                   <!-- <img src="images/shopping_bag_icon.svg" alt="cart"> -->
+                   <?xml version="1.0" ?><svg class="feather feather-shopping-bag" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </a>
+          </div>
+          </div>
         </div>
-        <div class="logo">
-            <a href="#">Venia</a>
-        </div>
-        <nav class="navbar">   
-            <ul class="nav-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="category.html"  class="active">Women</a></li>
-              <li><a href="#">Men</a></li>
-              <li><a href="#">Electronics</a></li>
-              <li><a href="#">Jewellery</a></li>
-            </ul>
-       </nav>
-       <div class="header__cart">
-        <a href="#cart" class="header__cart-link">
-            <!-- <i class="fas fa-shopping-cart header__cart-icon"></i>  -->
-             <!-- <img src="images/shopping_bag_icon.svg" alt="cart"> -->
-             <?xml version="1.0" ?><svg class="feather feather-shopping-bag" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-        </a>
-    </div>
-        </div>
-      </div>
     </header>
     <main>
         <section class="innerSection">
             <div class="innerSection-container">
-                <div class="innerSection-text column3">
+                <div class="innerSection-text column4">
                     <h2>Men’s Outerwear</h2>
                   </div>
-              <div class="innerSection-image column9">
-                <img src="images/adventure.jpg" alt="Image 1" class="image">
+              <div class="innerSection-image column8">
+                <img src="images/innerBanner.jpg" alt="Image 1" class="image">
               </div>   
             </div>
-          </section>
-        <section>
+        </section>
+        <section class="category">
             <div class="container">
                 <div class="row top-bar">
-                      <!-- Breadcrumb Navigation -->
-                      <div class="breadcrumb">
+                    <div class="breadcrumb">
                         <a href="index.html">Home</a> / 
                         <a href="#">Women's</a> / 
                         <span>Outerwear</span>
                     </div>
-
-                    <!-- Top Bar with Results and Sort -->
                     <div>
                         <div class="results">Showing <span id="result-count">0</span> results</div>
                     </div>
-
-                    <div>
-                        <select class="sort-select">
+                    <div class="sort">
+                        <select id="sort-price" class="sort-select">
                             <option value="default">Sort By Price</option>
-                            <option value="price-low-to-high">Price: Low to High</option>
-                            <option value="price-high-to-low">Price: High to Low</option>
-                            <option value="newest">Newest First</option>
+                            <option value="asc">Low to High</option>
+                            <option value="desc">High to Low</option>
                         </select>
                     </div>
-
+                    <div id="result-count"></div>
                 </div>
                 <div class="row">
-                     <!-- Left-side Filter Section -->
-                    <div class="filter-section column3">
-                        <h3>Filter By</h3>
-                        <div>
-                            <label><input type="checkbox"> Category 1</label>
-                            <label><input type="checkbox"> Category 2</label>
-                            <label><input type="checkbox"> Category 3</label>
-                            <label><input type="checkbox"> Category 4</label>
-                        </div>
-
-                        <h3>Price Range</h3>
-                        <div>
-                            <label><input type="checkbox"> $0 - $50</label>
-                            <label><input type="checkbox"> $50 - $100</label>
-                            <label><input type="checkbox"> $100 - $200</label>
+                    <div class="column2">
+                        <div class="filter-section">
+                            <div>
+                                <h3>Filter By Category</h3>
+                                <select id="category-filter">
+                                    <option value="">All Categories</option>
+                                </select>
+                            </div>
+                           <div>
+                            <h3>Price Range</h3>
+                            <input type="range" id="price-filter" min="0" max="500" step="10">
+                            <span id="price-range">Price: 0 - 500</span>
+                           </div>
+                            <div>
+                                <h3>Availability</h3>
+                            <select id="availability-filter">
+                                <option value="">All</option>
+                                <option value="true">In Stock</option>
+                                <option value="false">Out of Stock</option>
+                            </select>
+                            </div>
+                            
                         </div>
                     </div>
-
-                    <!-- Right-side Category Section -->
-                    <div class="category-container column7" id="product-container">
-                      
-                        <!-- Product Items Will Be Injected Here -->
+                    <div class="column10">
+                        <div id="products" class="product-container"></div>
+                    </div>
+                </div>
+                <div class="pagination row">
+                    <div class="pagination-controls">
+                        <button id="prev-btn">&#10095;</button>
+                        <span id="current-page">Page 1</span>
+                        <button id="next-btn">&#10095;</button>
                     </div>
                 </div>
             </div>
+            </div>
         </section>
+    
     </main>
     <footer class="footer">
         <div class="container">
@@ -143,7 +151,9 @@
               </div>
           </div>
           <div class="footer-bottom">
-              <div class="logo">VENIA</div>
+            <div class="logo">
+              <a href="#">Venia</a>
+            </div>
               <p>© Company Name Address Ave, City Name, State ZIP</p>
               <div class="footer-links">
                   <a href="#">Terms of Use</a>
@@ -154,5 +164,6 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script src="product.js"></script>
 </body>
 </html>
