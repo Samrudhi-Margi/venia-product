@@ -260,7 +260,8 @@ header.sticky {
 }
 
 .nav-links a:hover {
-  color: var(--color-primary-brand);
+  border-bottom: 5px solid white;
+  padding: 0px 10px 30px 10px;
 }
 
 .nav-links li a {
@@ -271,6 +272,7 @@ header.sticky {
 .nav-links li a.active {
   border-bottom: 5px solid white;
   padding: 0px 10px 30px 10px;
+  color: white;
 }
 
 .header__cart {
@@ -451,6 +453,7 @@ header.sticky {
   flex-direction: column;
   box-sizing: border-box;
   margin-top: -60px;
+  cursor: pointer;
 }
 
 /* Card image styling */
@@ -1640,7 +1643,7 @@ button.save-item img {
 .shipping-info {
   margin-top: 20px;
   border: 1px solid #d1d3d6;
-  padding: 0 23px 23px;
+  padding: 20px 23px 23px;
   border-radius: 2px;
 }
 
@@ -1665,7 +1668,7 @@ button.save-item img {
   align-items: baseline;
 }
 .shipping-row p {
-  margin: 20px 0 0 0;
+  margin: 0;
 }
 .shipping-row .info {
   font-size: 16px;
@@ -1685,6 +1688,7 @@ button.save-item img {
 }
 
 .shipping-row .info .left-column p,
+.shipping-row .info .right-column p,
 .order-row .info .left-column p,
 .order-row .info .right-column p {
   margin: 0;
@@ -1807,4 +1811,8 @@ button.save-item img {
 .order-info .product-box-info {
   margin-left: 10px;
   margin-top: 0px;
+}
+
+.order-row p {
+  margin: 20px 0 0 0;
 }
