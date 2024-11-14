@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venia - checkout Page</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- fontawesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="logo">
+            <a href="#">Venia</a>
+          </div>
+          <nav class="navbar">
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="category.html">Women</a></li>
+              <li><a href="#">Men</a></li>
+              <li><a href="#">Electronics</a></li>
+              <li><a href="#">Jewellery</a></li>
+            </ul>
+          </nav>
+          <div class="header__cart">
+            <a href="#cart" class="header__cart-link">
+              <!-- <i class="fas fa-shopping-cart header__cart-icon"></i>  -->
+              <!-- <img src="images/shopping_bag_icon.svg" alt="cart"> -->
+              <?xml version="1.0" ?><svg
+                class="feather feather-shopping-bag"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" x2="21" y1="6" y2="6" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="checkout-section">
+        <h2 class="checkout-title">Checkout</h2>
+        <div class="container">
+          <div class="row btn-mt2">
+            <div class="column7">
+              <h3>Guest Checkout</h3>
+              <div class="shipping-info">
+                <div class="shipping-row">
+                  <p><strong>Shipping Information</strong></p>
+                  <div>
+                    <a href="checkout-step1.html" class="edit-item">
+                      <img src="images/edit.png" alt="arrow down" />Edit
+                    </a>
+                  </div>
+                </div>
+                <div class="shipping-row">
+                  <div class="info">
+                    <!-- Left column (email and phone) -->
+                    <div class="left-column">
+                      <p class="email">q_farhan@gmail.com</p>
+                      <p class="phone">+1 (555) 229-3367</p>
+                    </div>
+
+                    <!-- Right column (name and address) -->
+                    <div class="right-column">
+                      <p class="name">Qadim Farhan</p>
+                      <p class="address">
+                        1098 Wapello Street, Altadena, California 91001, United
+                        States
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="shipping-info">
+                <div class="shipping-row">
+                  <p><strong>Shipping Method</strong></p>
+                  <div>
+                    <a href="checkout-step2.html" class="edit-item">
+                      <img src="images/edit.png" alt="arrow down" />Edit
+                    </a>
+                  </div>
+                </div>
+                <div class="shipping-row">
+                  <div class="info">
+                    <!-- Left column (email and phone) -->
+                    <div class="left-column">
+                      <p class="email">Standard Shipping</p>
+                      <p class="phone">Est. delivery in 4 - 8 business days</p>
+                      <p class="free">FREE</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="shipping-info">
+                <div class="shipping-row">
+                  <p><strong>Payment Information</strong></p>
+                  <div>
+                    <a href="checkout-step3.html" class="edit-item">
+                      <img src="images/edit.png" alt="arrow down" />Edit
+                    </a>
+                  </div>
+                </div>
+                <div class="shipping-row">
+                  <div class="info">
+                    <!-- Left column (email and phone) -->
+                    <div class="left-column">
+                      <p class="email">Credit Card</p>
+                      <p class="phone">Visa ending in 4567</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              sam
+            </div>
+            <div class="column4">
+              <div class="price-summary shipping-box">
+                <h4>Price Summary</h4>
+                <div class="summary-item">
+                  <span>Subtotal</span>
+                  <span>$100.00</span>
+                </div>
+                <div class="summary-item">
+                  <span>Coupon</span>
+                  <span>-$10.00</span>
+                </div>
+                <div class="summary-item">
+                  <span>Gift Card</span>
+                  <span>-$5.00</span>
+                </div>
+                <div class="summary-item">
+                  <span>Estimated Tax</span>
+                  <span>$8.00</span>
+                </div>
+                <div class="summary-item">
+                  <span>Estimated Shipping</span>
+                  <span>$5.00</span>
+                </div>
+                <div class="total">
+                  <span>Estimated Total</span>
+                  <span>$98.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-container">
+            <div class="footer-section">
+              <h4>Account</h4>
+              <ul>
+                <li><a href="#">Sign In</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Order Status</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>About Us</h4>
+              <ul>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Careers</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Help</h4>
+              <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Order Status</a></li>
+                <li><a href="#">Returns</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Follow Us!</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore.
+              </p>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="logo">
+              <a href="#">Venia</a>
+            </div>
+            <p>© Company Name Address Ave, City Name, State ZIP</p>
+            <div class="footer-links">
+              <a href="#">Terms of Use</a>
+              <a href="#">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

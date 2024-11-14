@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venia - checkout Page</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- fontawesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="logo">
+            <a href="#">Venia</a>
+          </div>
+          <nav class="navbar">
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="category.html">Women</a></li>
+              <li><a href="#">Men</a></li>
+              <li><a href="#">Electronics</a></li>
+              <li><a href="#">Jewellery</a></li>
+            </ul>
+          </nav>
+          <div class="header__cart">
+            <a href="#cart" class="header__cart-link">
+              <!-- <i class="fas fa-shopping-cart header__cart-icon"></i>  -->
+              <!-- <img src="images/shopping_bag_icon.svg" alt="cart"> -->
+              <?xml version="1.0" ?><svg
+                class="feather feather-shopping-bag"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" x2="21" y1="6" y2="6" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="checkout-section">
+        <h2 class="checkout-title">Checkout</h2>
+        <div class="container">
+          <div class="row btn-mt2">
+            <div class="column7">
+              <h3>Guest Checkout</h3>
+              <div class="contact-info form-full">
+                <p class="lead">Contact Information</p>
+                <p>
+                  We’ll use these details to keep you informed on your delivery.
+                </p>
+                <form class="custom-form">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="example@example.com"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="phone">Phone Number</label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="123-456-7890"
+                        required
+                      />
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="accordion form-full">
+                <div class="accordion-item">
+                  <div class="accordion-header" id="shipping-header">
+                    <div class="accordion-header-content">
+                      <span>1. Shipping Information</span>
+                    </div>
+                  </div>
+                  <div class="accordion-content" id="shipping-content">
+                    <form>
+                      <div class="form-row">
+                        <div class="form-group half-width">
+                          <label for="country">Country</label>
+                          <select id="country" name="country" required>
+                            <option value="" disabled selected>
+                              Select a country
+                            </option>
+                            <!-- Country options will be populated here statically -->
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group">
+                          <label for="first-name">First Name</label>
+                          <input
+                            type="text"
+                            id="first-name"
+                            name="first-name"
+                            placeholder="First Name"
+                            required
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label for="last-name">Last Name</label>
+                          <input
+                            type="text"
+                            id="last-name"
+                            name="last-name"
+                            placeholder="Last Name"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group">
+                          <label for="address1">Street Address 1</label>
+                          <input
+                            type="text"
+                            id="address1"
+                            name="address1"
+                            placeholder="Street Address 1"
+                            required
+                          />
+                        </div>
+
+                        <div class="form-group">
+                          <label for="address2" class="flex-between"
+                            >Street Address 2<span class="optional"
+                              >(Optional)</span
+                            ></label
+                          >
+                          <input
+                            type="text"
+                            id="address2"
+                            name="address2"
+                            placeholder="Street Address 2"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group">
+                          <label for="city">City</label>
+                          <input
+                            type="text"
+                            id="city"
+                            name="city"
+                            placeholder="City"
+                            required
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label for="state">State</label>
+                          <select id="state" name="state" required>
+                            <option value="" disabled selected>
+                              Select a state
+                            </option>
+                            <!-- State options will be populated here statically -->
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="zip">Zip Code</label>
+                          <input
+                            type="text"
+                            id="zip"
+                            name="zip"
+                            placeholder="Zip Code"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="flex-center btn-mt">
+                        <button
+                          type="submit"
+                          class="btn btn-primary-outline form-btn"
+                          onclick="window.location.href = 'checkout-step2.html';"
+                        >
+                          CONTINUE TO SHIPPING METHOD
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <!-- Accordion Item 2: Coupon Code -->
+                <div class="accordion-item">
+                  <div class="accordion-header" id="coupon-header">
+                    <div class="accordion-header-content">
+                      <span>2. Shipping Method</span>
+                    </div>
+                  </div>
+                  <div class="accordion-content" id="coupon-content">
+                    <form>
+                      <div class="form-radio">
+                        <div class="radio">
+                          <input
+                            type="radio"
+                            name="shipping-method"
+                            value="standard"
+                            checked
+                          />
+                          <label>
+                            Standard Shipping (4-8 business days via USPS) FREE
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <input
+                            type="radio"
+                            name="shipping-method"
+                            value="express"
+                          />
+                          <label>
+                            Express Delivery (2-5 business days via USPS) $17.95
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <input
+                            type="radio"
+                            name="shipping-method"
+                            value="overnight"
+                          />
+                          <label>
+                            Next Day Delivery (Next business days via FedEx)
+                            $53.61
+                          </label>
+                        </div>
+                      </div>
+                      <div class="flex-center btn-mt">
+                        <button
+                          type="submit"
+                          class="btn btn-primary-outline form-btn"
+                        >
+                          CONTINUE TO PAYMENT
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <!-- Accordion Item 3: Apply Gift Card -->
+                <div class="accordion-item">
+                  <div class="accordion-header" id="gift-cards-header">
+                    <div class="accordion-header-content">
+                      <span>3. Payment Information</span>
+                    </div>
+                  </div>
+                  <div class="accordion-content" id="gift-cards-content">
+                    <div class="accordion">
+                      <div class="accordion-item">
+                        <div class="accordion-header" id="payment-method">
+                          <div class="accordion-header-content">
+                            <!-- <span> <div class="form-radio">
+                            <div class="radio">
+                            <input
+                                type="radio"
+                                name="credit-card"
+                                value="standard"
+                                checked
+                            />
+                            <label> Credit Card </label>
+                            </div></span> -->
+                            <span> Credit Card</span>
+                          </div>
+                        </div>
+                        <div class="accordion-content" id="payment-content">
+                          <form>
+                            <div class="form-row">
+                              <div class="form-group half-width">
+                                <label for="card-name">Name on Card</label>
+                                <input
+                                  type="text"
+                                  id="card-name"
+                                  name="card-name"
+                                  placeholder="Name on Card"
+                                  required
+                                />
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group half-width">
+                                <label for="card-number"
+                                  >Credit Card Number</label
+                                >
+                                <input
+                                  type="text"
+                                  id="card-number"
+                                  name="card-number"
+                                  placeholder="1234 5678 9012 3456"
+                                  required
+                                />
+                              </div>
+                            </div>
+
+                            <div class="form-row">
+                              <div class="form-group">
+                                <label for="exp-date">Expiration Date</label>
+                                <input
+                                  type="date"
+                                  id="exp-date"
+                                  name="exp-date"
+                                  placeholder="MM/YY"
+                                  required
+                                />
+                              </div>
+                              <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input
+                                  type="number"
+                                  id="cvv"
+                                  name="cvv"
+                                  placeholder="CVV"
+                                  required
+                                /><i
+                                  class="fa-regular fa-circle-question que"
+                                ></i>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group">
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="billing-same"
+                                    id="billing-same"
+                                  />
+                                  Billing address same as shipping
+                                  address</label
+                                >
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+
+                      <div class="accordion-item">
+                        <div class="accordion-header" id="paypal-header">
+                          <div class="accordion-header-content">
+                            <span>
+                              PayPal
+                              <!-- <div class="form-radio">
+                            <div class="radio">
+                            <input
+                                type="radio"
+                                name="credit-card-pay"
+                                value="paypal"
+                            />
+                            <label> PayPal </label>
+                            </div>
+                        </div> -->
+                            </span>
+                          </div>
+                        </div>
+                        <div class="accordion-content" id="paypal-content">
+                          <form></form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex-center btn-mt">
+                      <button
+                        type="submit"
+                        class="btn btn-primary-outline form-btn"
+                      >
+                        CONTINUE TO REVIEW ORDER
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column4">
+              <div class="price-summary expre-box">
+                <p>Sign in for Express Checkout</p>
+                <button class="btn btn-primary-outline">SIGN IN</button>
+              </div>
+
+              <div class="price-summary">
+                <h4>Price Summary</h4>
+                <div class="summary-item">
+                  <span>Subtotal</span>
+                  <span>$100.00</span>
+                </div>
+                <div class="summary-item">
+                  <span>Coupon</span>
+                  <span>-$10.00</span>
+                </div>
+                <div class="summary-item">
+                  <span>Gift Card</span>
+                  <span>-$5.00</span>
+                </div>
+                <div class="summary-item">
+                  <span>Estimated Tax</span>
+                  <span>$8.00</span>
+                </div>
+                <div class="summary-item">
+                  <span>Estimated Shipping</span>
+                  <span>$5.00</span>
+                </div>
+                <div class="total">
+                  <span>Estimated Total</span>
+                  <span>$98.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-container">
+            <div class="footer-section">
+              <h4>Account</h4>
+              <ul>
+                <li><a href="#">Sign In</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Order Status</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>About Us</h4>
+              <ul>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Careers</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Help</h4>
+              <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Order Status</a></li>
+                <li><a href="#">Returns</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Follow Us!</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore.
+              </p>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="logo">
+              <a href="#">Venia</a>
+            </div>
+            <p>© Company Name Address Ave, City Name, State ZIP</p>
+            <div class="footer-links">
+              <a href="#">Terms of Use</a>
+              <a href="#">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

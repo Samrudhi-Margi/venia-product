@@ -110,22 +110,3 @@ document.addEventListener("DOMContentLoaded", async function () {
   // Initial price update
   updatePriceSummary();
 });
-// Get all the accordion headers
-const headers = document.querySelectorAll(".accordion-header");
-
-// Add click event listeners for each header
-headers.forEach((header) => {
-  header.addEventListener("click", function () {
-    const content = this.nextElementSibling;
-    const arrow = this.querySelector(".arrow");
-
-    // Toggle the visibility of the content
-    if (content.style.display === "block") {
-      content.style.display = "none";
-      arrow.innerHTML = '<img src="images/down-arrow.png" alt="arrow down" />'; // Down arrow
-    } else {
-      content.style.display = "block";
-      arrow.innerHTML = '<img src="images/up-arrow.png" alt="arrow up" />'; // Up arrow
-    }
-  });
-});
