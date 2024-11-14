@@ -27,7 +27,7 @@
           </div>
           <nav class="navbar">
             <ul class="nav-links">
-              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="index.html">Home</a></li>
               <li><a href="category.html">Women</a></li>
               <li><a href="#">Men</a></li>
               <li><a href="#">Electronics</a></li>
@@ -59,7 +59,138 @@
         </div>
       </div>
     </header>
-    <main></main>
+    <main>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="cart-container">
+              <div class="column9">
+                <div class="cart-items">
+                  <h2>Your Shopping Bag</h2>
+                  <div id="cart-items-list">
+                    <!-- Cart items will be dynamically added here -->
+                  </div>
+                </div>
+                <div class="accordion">
+                  <div class="accordion-item">
+                    <button class="accordion-header" id="shipping-header">
+                      <div class="accordion-header-content">
+                        <span class="left-side">Estimate your Shipping</span>
+                        <span class="right-side">Shipping to 91001</span>
+                      </div>
+                      <span class="arrow">
+                        <img src="images/down-arrow.png" alt="" />
+                      </span>
+                    </button>
+                    <div class="accordion-content" id="shipping-content">
+                      <p>
+                        Estimated shipping cost will be calculated during
+                        checkout.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-header" id="coupon-header">
+                      <div class="accordion-header-content">
+                        <span class="left-side">Enter a Coupon Code</span>
+                        <span class="right-side">20% discount applied</span>
+                      </div>
+                      <span class="arrow">
+                        <img src="images/down-arrow.png" alt="" />
+                      </span>
+                    </button>
+                    <div class="accordion-content" id="coupon-content">
+                      <input type="text" placeholder="Enter Coupon Code" />
+                      <button id="apply-coupon" class="btn btn-primary">
+                        Apply
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-header" id="gift-cards-header">
+                      <span>Apply Gift Card</span>
+                      <span class="arrow">
+                        <img src="images/down-arrow.png" alt="" />
+                      </span>
+                    </button>
+                    <div class="accordion-content" id="gift-cards-content">
+                      <input type="text" placeholder="Enter Gift Card Code" />
+                      <button id="apply-gift-card" class="btn btn-primary">
+                        Apply
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column3">
+                <div class="cart-summary">
+                  <h3>Price Summary</h3>
+                  <div class="summary-item">
+                    <p>Subtotal:</p>
+                    <p id="subtotal">$0.00</p>
+                  </div>
+                  <div class="summary-item">
+                    <p>Coupon</p>
+                    <p id="coupom">$0.00</p>
+                  </div>
+                  <div class="summary-item">
+                    <p>Gift Cards</p>
+                    <p id="tax">$0.00</p>
+                  </div>
+                  <div class="summary-item">
+                    <p>Estimated Tax</p>
+                    <p id="tax">$0.00</p>
+                  </div>
+                  <div class="summary-item">
+                    <p>Estimated Shipping</p>
+                    <p id="shipping">$5.00</p>
+                  </div>
+                  <div class="summary-item">
+                    <p><strong>Estimated Total</strong></p>
+                    <p id="total">$0.00</p>
+                  </div>
+                  <div class="checkout-buttons">
+                    <button id="checkout-btn" class="btn btn-primary">
+                      <?xml version="1.0" ?><svg
+                        class="feather feather-lock"
+                        fill="none"
+                        height="24"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          height="11"
+                          rx="2"
+                          ry="2"
+                          width="18"
+                          x="3"
+                          y="11"
+                        />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg
+                      >Checkout
+                    </button>
+                    <button id="paypal-btn" class="btn btn-paypal">
+                      <img
+                        src="images/PayPal.svg"
+                        alt="PayPal Logo"
+                        class="image"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer class="footer">
       <div class="container">
         <div class="row">
@@ -114,5 +245,6 @@
       </div>
     </footer>
     <script src="script.js"></script>
+    <script src="shopping.js"></script>
   </body>
 </html>
