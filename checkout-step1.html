@@ -112,7 +112,6 @@
                             <option value="" disabled selected>
                               Select a country
                             </option>
-                            <!-- Country options will be populated here statically -->
                           </select>
                         </div>
                       </div>
@@ -181,7 +180,6 @@
                             <option value="" disabled selected>
                               Select a state
                             </option>
-                            <!-- State options will be populated here statically -->
                           </select>
                         </div>
                         <div class="form-group">
@@ -208,7 +206,6 @@
                   </div>
                 </div>
 
-                <!-- Accordion Item 2: Coupon Code -->
                 <div class="accordion-item">
                   <div class="accordion-header" id="coupon-header">
                     <div class="accordion-header-content">
@@ -263,9 +260,7 @@
                   </div>
                 </div>
 
-                <!-- Accordion Item 3: Apply Gift Card -->
                 <div class="accordion form-full">
-                  <!-- Accordion Item 3: Apply Gift Card -->
                   <div class="accordion-item">
                     <div class="accordion-header" id="gift-cards-header">
                       <div class="accordion-header-content">
@@ -525,7 +520,6 @@
     </footer>
     <script src="js/script.js"></script>
     <script>
-      // Static list of states (for example, US states) for when the country is selected
       const usStates = [
         "Alabama",
         "Alaska",
@@ -585,20 +579,17 @@
         countrySelect.addEventListener("change", function () {
           const selectedCountry = countrySelect.value;
 
-          // Clear the state dropdown
           stateSelect.innerHTML =
             '<option value="" disabled selected>Select a state</option>';
 
-          // If the selected country is 'United States', populate with US states
           if (selectedCountry === "United States") {
             usStates.forEach((state) => {
               const option = document.createElement("option");
-              option.value = state; // Set the option's value to the state name
-              option.textContent = state; // Set the option text to the state name
-              stateSelect.appendChild(option); // Append the option to the dropdown
+              option.value = state;
+              option.textContent = state;
+              stateSelect.appendChild(option);
             });
           } else {
-            // If any other country is selected, you can choose to populate with default options or leave empty
             const option = document.createElement("option");
             option.value = "";
             option.textContent = "No states available";

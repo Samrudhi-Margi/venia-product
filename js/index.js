@@ -1,10 +1,8 @@
-// slider
 let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
 const totalSlides = slides.length;
 const dotsContainer = document.querySelector(".slider-dots");
 
-// Create navigation dots
 for (let i = 0; i < totalSlides; i++) {
   const dot = document.createElement("div");
   dot.classList.add("slider-dot");
@@ -36,10 +34,7 @@ function goToSlide(index) {
   updateDots();
 }
 
-// Auto slide change every 5 seconds
 setInterval(() => changeSlide(1), 5000);
-
-/* get products */
 
 let getHomeProducts = async () => {
   await fetch("https://fakestoreapi.com/products")
@@ -58,8 +53,6 @@ let getHomeProducts = async () => {
       }
 
       const oneProductPerCategory = getOneProductPerCategory(products);
-
-      // Get the container where the cards will go
 
       const displayCatCards = () => {
         if (oneProductPerCategory.length > 0) {

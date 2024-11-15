@@ -20,15 +20,22 @@
               <span></span>
           </div>
           <div class="logo">
-              <a href="index.html">Venia</a>
+              <a href="#">Venia</a>
           </div>
-          <nav class="navbar">
+          <nav class="navbar">   
+               <!-- <ul class="nav-links">
+                 <li><a href="index.html">Home</a></li>
+                 <li><a href="category.html" class="active">Women</a></li>
+                 <li><a href="#">Men</a></li>
+                 <li><a href="#">Electronics</a></li>
+                 <li><a href="#">Jewellery</a></li>
+               </ul> -->
                <ul class="nav-links" id="navLinks">
 
                </ul>
           </nav>
           <div class="header__cart">
-              <a href="category.html" class="header__cart-link">
+              <a href="#cart" class="header__cart-link">
                   <!-- <i class="fas fa-shopping-cart header__cart-icon"></i>  -->
                    <!-- <img src="images/shopping_bag_icon.svg" alt="cart"> -->
                    <?xml version="1.0" ?><svg class="feather feather-shopping-bag" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
@@ -45,17 +52,17 @@
                   </div>
               <div class="innerSection-image column8">
                 <img src="images/innerBanner.jpg" alt="Image 1" class="image">
-              </div>
+                
+              </div>   
             </div>
         </section>
         <section class="category">
             <div class="container">
                 <div class="row top-bar">
-                    <div class="breadcrumb">
-                        <a href="index.html">Home</a> /
-                        <a href="#">Women's</a> /
-                        <span>Outerwear</span>
-                    </div>
+                   <div class="breadcrumb">
+                <a href="index.html">Home</a> / <a href="#">Women's</a> /
+                <span>Outerwear</span>
+              </div>
                     <div>
                         <div class="results">Showing <span id="result-count">0</span> results</div>
                     </div>
@@ -68,16 +75,27 @@
                     </div>
                     <div id="result-count"></div>
                 </div>
+                <div class="row filter-pop">
+                  
+                    <div class="action open-btn" id="openFilterBtn">
+                    <img src="./images/filter.png" alt="">
+                    <h3>Filter</h3>
+                    </div>
+                    <div class="action">
+                      <img src="./images/sort.png" alt="">
+                      <h3>Sort</h3>
+                      </div>
+                </div>
                 <div class="row">
-                    <div class="column2">
-                        <div class="filter-section">
+                    <div class="column2 filter-popup" id="filterPopup">
+                      <button class="close-btn" id="closeFilterBtn">X</button>
+                        <div class="filter-section popup-content">
                             <div>
                                 <h3>Filter By Category</h3>
                                 <!-- <select id="category-filter">
                                     <option value="">All Categories</option>
                                 </select> -->
-                                <div class="category-filter-wrapper" id="categoryFilter">
-
+                                <div id="category-checkboxes">
                                 </div>
                             </div>
                            <div>
@@ -87,11 +105,19 @@
                            </div>
                             <div>
                                 <h3>Availability</h3>
-                            <select id="availability-filter">
+                            <!-- <select id="availability-filter">
                                 <option value="">All</option>
                                 <option value="true">In Stock</option>
                                 <option value="false">Out of Stock</option>
-                            </select>
+                            </select> -->
+                            <label>
+                                <input type="checkbox" id="in-stock" /> 
+                                In Stock
+                            </label>
+                            <label>
+                                <input type="checkbox" id="out-of-stock" /> 
+                                Out of Stock
+                                </label>
                             </div>
                             
                         </div>
@@ -102,7 +128,7 @@
                 </div>
                 <div class="pagination row">
                     <div class="pagination-controls">
-                        <button id="prev-btn">&#10094;</button>
+                        <button id="prev-btn">&#10095;</button>
                         <span id="current-page">Page 1</span>
                         <button id="next-btn">&#10095;</button>
                     </div>
@@ -117,55 +143,297 @@
           <div class="row">
             <div class="footer-container">
               <div class="footer-section">
-                <h4>Account</h4>
-                <ul>
-                  <li><a href="#">Sign In</a></li>
-                  <li><a href="#">Register</a></li>
-                  <li><a href="#">Order Status</a></li>
-                </ul>
+                  <h4>Account</h4>
+                  <ul>
+                      <li><a href="#">Sign In</a></li>
+                      <li><a href="#">Register</a></li>
+                      <li><a href="#">Order Status</a></li>
+                  </ul>
               </div>
               <div class="footer-section">
-                <h4>About Us</h4>
-                <ul>
-                  <li><a href="#">Our Story</a></li>
-                  <li><a href="#">Careers</a></li>
-                </ul>
+                  <h4>About Us</h4>
+                  <ul>
+                      <li><a href="#">Our Story</a></li>
+                      <li><a href="#">Careers</a></li>
+                  </ul>
               </div>
               <div class="footer-section">
-                <h4>Help</h4>
-                <ul>
-                  <li><a href="#">Contact Us</a></li>
-                  <li><a href="#">Order Status</a></li>
-                  <li><a href="#">Returns</a></li>
-                </ul>
+                  <h4>Help</h4>
+                  <ul>
+                      <li><a href="#">Contact Us</a></li>
+                      <li><a href="#">Order Status</a></li>
+                      <li><a href="#">Returns</a></li>
+                  </ul>
               </div>
               <div class="footer-section">
-                <h4>Follow Us!</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore.
-                </p>
-                <div class="social-icons">
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
+                  <h4>Follow Us!</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                  <div class="social-icons">
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                  </div>
               </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="logo">
+              <a href="#">Venia</a>
             </div>
+              <p>© Company Name Address Ave, City Name, State ZIP</p>
+              <div class="footer-links">
+                  <a href="#">Terms of Use</a>
+                  <a href="#">Privacy Policy</a>
+              </div>
+          </div>
           </div>
         </div>
-        <div class="footer-bottom">
-          <div class="logo">
-            <a href="index.html">Venia</a>
-          </div>
-          <p>© Company Name Address Ave, City Name, State ZIP</p>
-          <div class="footer-links">
-            <a href="#">Terms of Use</a>
-            <a href="#">Privacy Policy</a>
-          </div>
-        </div>
-      </footer>
+    </footer>
     <script src="js/script.js"></script>
-    <script src="js/product.js"></script>
+    <script src="js/category.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  let allProducts = [];
+  let filteredProducts = [];
+  let currentPage = 1;
+  const productsPerPage = 10;
+
+  // Fetch products from the fake API
+  fetch("https://fakestoreapi.com/products")
+    .then((response) => response.json())
+    .then((data) => {
+      // Adding mock availability data
+      data = data.map((product) => {
+        product.available = Math.random() < 0.7; // 70% chance of being in stock
+        return product;
+      });
+
+      allProducts = data;
+      filteredProducts = data;
+      loadCategories();
+      displayProducts();
+      updateResultCount();
+    })
+    .catch((error) => console.error("Error fetching products:", error));
+
+  // Load categories for filter (checkboxes)
+  function loadCategories() {
+    const categories = [
+      ...new Set(allProducts.map((product) => product.category)),
+    ];
+    const categoryContainer = document.getElementById("category-checkboxes");
+    
+    if (categoryContainer) {
+      categoryContainer.innerHTML = ""; // Clear existing categories
+
+      categories.forEach((category) => {
+        const checkboxLabel = document.createElement("label");
+        checkboxLabel.innerHTML = `
+          <input type="checkbox" class="category-filter" value="${category}" /> ${category}
+        `;
+        categoryContainer.appendChild(checkboxLabel);
+      });
+
+      // Reattach event listener to the checkboxes
+      document.querySelectorAll(".category-filter").forEach((checkbox) => {
+        checkbox.addEventListener("change", () => {
+          filterByCategory();
+        });
+      });
+    } else {
+      console.error('category-checkboxes element not found');
+    }
+  }
+
+  // Display products with pagination
+  function displayProducts() {
+    const start = (currentPage - 1) * productsPerPage;
+    const end = currentPage * productsPerPage;
+    const productsToDisplay = filteredProducts.slice(start, end);
+    const productContainer = document.getElementById("products");
+    
+    if (productContainer) {
+      productContainer.innerHTML = "";
+
+      productsToDisplay.forEach((product) => {
+        const productElement = document.createElement("div");
+        productElement.classList.add("product");
+        productElement.innerHTML = `
+          <div class="product-img">
+            <img src="${product.image}" alt="${product.title}" />
+          </div>
+          <div class="product-info">
+            <h4>${product.title}</h4>
+            <p>$${product.price}</p>
+            <p>Availability: ${product.available ? "In Stock" : "Out of Stock"}</p>
+          </div>
+        `;
+        productContainer.appendChild(productElement);
+      });
+
+      updatePagination();
+    } else {
+      console.error('products container element not found');
+    }
+  }
+
+  // Update result count
+  function updateResultCount() {
+    const resultCount = document.getElementById("result-count");
+    
+    if (resultCount) {
+      resultCount.textContent = `Showing ${filteredProducts.length} results`;
+    } else {
+      console.error('result-count element not found');
+    }
+  }
+
+  // Update pagination buttons
+  function updatePagination() {
+    const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const currentPageElem = document.getElementById("current-page");
+
+    if (prevBtn) prevBtn.disabled = currentPage === 1;
+    if (nextBtn) nextBtn.disabled = currentPage === totalPages;
+    if (currentPageElem) currentPageElem.textContent = `Page ${currentPage} of ${totalPages}`;
+  }
+
+  // Filter by category
+  function filterByCategory() {
+    const selectedCategories = Array.from(
+      document.querySelectorAll(".category-filter:checked")
+    ).map((checkbox) => checkbox.value);
+
+    if (selectedCategories.length > 0) {
+      filteredProducts = allProducts.filter((product) =>
+        selectedCategories.includes(product.category)
+      );
+    } else {
+      filteredProducts = allProducts;
+    }
+
+    currentPage = 1;
+    displayProducts();
+    updateResultCount();
+  }
+
+  // Filter by price
+  const priceFilter = document.getElementById("price-filter");
+  if (priceFilter) {
+    priceFilter.addEventListener("input", (e) => {
+      const maxPrice = e.target.value;
+      const priceRange = document.getElementById("price-range");
+      
+      if (priceRange) {
+        priceRange.textContent = `Price: 0 - ${maxPrice}`;
+      }
+
+      filteredProducts = allProducts.filter(
+        (product) => product.price <= maxPrice
+      );
+      currentPage = 1;
+      displayProducts();
+      updateResultCount();
+    });
+  }
+
+  // Filter by availability (using checkboxes)
+  const inStock = document.getElementById("in-stock");
+  const outOfStock = document.getElementById("out-of-stock");
+
+  if (inStock && outOfStock) {
+    inStock.addEventListener("change", () => {
+      filterByAvailability();
+    });
+    outOfStock.addEventListener("change", () => {
+      filterByAvailability();
+    });
+  }
+
+  function filterByAvailability() {
+    const inStockChecked = inStock.checked;
+    const outOfStockChecked = outOfStock.checked;
+
+    if (inStockChecked && !outOfStockChecked) {
+      filteredProducts = allProducts.filter((product) => product.available);
+    } else if (!inStockChecked && outOfStockChecked) {
+      filteredProducts = allProducts.filter(
+        (product) => !product.available
+      );
+    } else {
+      filteredProducts = allProducts;
+    }
+
+    currentPage = 1;
+    displayProducts();
+    updateResultCount();
+  }
+
+  // Sort by price
+  const sortPrice = document.getElementById("sort-price");
+  if (sortPrice) {
+    sortPrice.addEventListener("change", (e) => {
+      const sortOrder = e.target.value;
+      filteredProducts.sort((a, b) => {
+        return sortOrder === "asc" ? a.price - b.price : b.price - a.price;
+      });
+      displayProducts();
+    });
+  }
+
+  // Pagination - previous page
+  const prevBtn = document.getElementById("prev-btn");
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        displayProducts();
+      }
+    });
+  }
+
+  // Pagination - next page
+  const nextBtn = document.getElementById("next-btn");
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+      if (currentPage < totalPages) {
+        currentPage++;
+        displayProducts();
+      }
+    });
+  }
+
+ 
+
+  // Fetch product and render breadcrumbs on page load
+  fetchProduct();
+  console.log("Fetched product:", product);
+});
+
+// Get the elements
+const openFilterBtn = document.getElementById("openFilterBtn");
+const filterPopup = document.getElementById("filterPopup");
+const closeFilterBtn = document.getElementById("closeFilterBtn");
+
+// Open the filter popup
+openFilterBtn.addEventListener("click", () => {
+  filterPopup.style.display = "flex"; // Show the popup
+});
+
+// Close the filter popup
+closeFilterBtn.addEventListener("click", () => {
+  filterPopup.style.display = "none"; // Hide the popup
+});
+
+// You can also close the popup if clicked outside the popup content
+filterPopup.addEventListener("click", (e) => {
+  if (e.target === filterPopup) {
+    filterPopup.style.display = "none";
+  }
+});
+
+      </script>
 </body>
 </html>

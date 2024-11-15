@@ -71,9 +71,7 @@
               </div>
             </div>
             <div class="product-details">
-             
-              <div class="product-images column6">
-              
+              <div class="product-images column5">
                 <div class="thumbnail-gallery">
                   <img
                     src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
@@ -100,41 +98,48 @@
                   />
                 </div>
               </div>
-              <div class="product-info column6">
+              <div class="product-info column7">
                 <div class="breadcrumb bc-desk">
                   <a href="index.html">Home</a> / <a href="#">Women's</a> /
                   <span>Outerwear</span>
                 </div>
                 <h1 id="productName">Product Name</h1>
-                <div class="price" id="productPrice">$99.99</div>
+                <div id="productPrice" class="price">$99.99</div>
                 <div id="productRating" class="product-rating">rating</div>
-                <div id="productDescription">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor labore et dolore magna.
-                    <a href="#" class="readmore">Read more</a>
-                  </p>
-                </div>
-                <!-- Quantity Control -->
-                <div class="quantity-control">
+                <p id="productDescription">Product description goes here...</p>
+
+                <!-- <div class="quantity-control">
                   <p>Quantity</p>
-                  <!-- <div>
-                    <button id="decreaseQuantity">-</button>
-                    <span id="quantity">1</span>
-                    <button id="increaseQuantity">+</button>
-                  </div> -->
+                 
                   <div class="quantity-control">
                     <button class="decrease-quantity">-</button>
-                    <span class="item-quantity"><input type="number" value="${
+                    <span class="item-quantity"
+                      ><input
+                        type="number"
+                        value="${
                       item.quantity
-                    }" min="1"></span>
+                    }"
+                        min="1"
+                    /></span>
                     <button class="increase-quantity">+</button>
-                </div>
+                  </div>
+                </div> -->
+                <!-- Quantity Control -->
+                <div class="quantity-control">
+                  <p class="quantity-label">Quantity</p>
+                  <div class="quantity-actions">
+                    <button id="decreaseQuantity">-</button>
+                    <span><input type="number" value="1" id="quantity" /></span>
+                    <button id="increaseQuantity">+</button>
+                  </div>
                 </div>
 
-                <!-- Actions -->
                 <div class="">
-                  <button id="addToCart" class="btn btn-primary addtocart" onclick="window.location.href = 'shopping.html';">
+                  <button
+                    id="addToCart"
+                    class="btn btn-primary addtocart"
+                    onclick="window.location.href = 'shopping.html';"
+                  >
                     Add to Cart
                   </button>
                 </div>
@@ -218,13 +223,13 @@
                     Share
                   </button>
                 </div>
-                <!-- Rating -->
+                <div id="productRating" class="product-rating"></div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="details">
-              <h2>Product Name</h2>
+              <h1 id="productName">Product Name</h1>
               <p>Description</p>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -295,8 +300,92 @@
         </div>
       </div>
     </footer>
-    <script src="js/script.js"></script>
-    <script src = js/product-details.js"></script>
+    <!-- <script src="js/script.js"></script>
+<script src = js/product-details.js"></script> -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("https://fakestoreapi.com/products/1")
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("productName").textContent = data.title;
+            document.getElementById("productDescription").textContent =
+              data.description;
+            document.getElementById(
+              "productPrice"
+            ).textContent = `$${data.price.toFixed(2)}`;
+            // document.getElementById(
+            //   "productQuantity"
+            // ).textContent = `Available Quantity: ${data.stock}`;
+            // document.getElementById("productDescription").textContent =
+            //   data.description;
+
+            const mainImage = document.getElementById("mainImage");
+            mainImage.src = data.image;
+
+            const thumbnailGallery =
+              document.querySelector(".thumbnail-gallery");
+
+            const thumbnail = document.createElement("img");
+            thumbnail.classList.add("thumbnail");
+            thumbnail.src = data.image;
+            thumbnail.alt = "Thumbnail";
+            thumbnail.onclick = function () {
+              changeImage(data.image);
+            };
+            thumbnailGallery.appendChild(thumbnail);
+
+            // const productSpecifications = document.getElementById(
+            //   "productSpecifications"
+            // );
+            // productSpecifications.innerHTML = `
+            // <li><strong>Category:</strong> ${data.category}</li>
+            // <li><strong>Rating:</strong> ${
+            //   data.rating ? data.rating.rate : "N/A"
+            // } / 5</li>
+            // <li><strong>Stock:</strong> ${data.stock}</li>`
+
+            // Handle Quantity Change
+            let quantity = 1;
+            document.getElementById("quantity").value = quantity;
+
+            document
+              .getElementById("increaseQuantity")
+              .addEventListener("click", () => {
+                quantity++;
+                document.getElementById("quantity").value = quantity;
+              });
+
+            document
+              .getElementById("decreaseQuantity")
+              .addEventListener("click", () => {
+                if (quantity > 1) {
+                  quantity--;
+                  document.getElementById("quantity").value = quantity;
+                }
+              });
+            const rating = data.rating ? data.rating.rate : 0;
+            const productRating = document.getElementById("productRating");
+            for (let i = 0; i < 5; i++) {
+              const star = document.createElement("span");
+              star.classList.add("star");
+              if (i < rating) {
+                star.innerHTML = "★"; // Filled star
+              } else {
+                star.innerHTML = "☆"; // Empty star
+              }
+              productRating.appendChild(star);
+            }
+          })
+          .catch((error) =>
+            console.error("Error fetching product data:", error)
+          );
+      });
+
+      function changeImage(imageUrl) {
+        const mainImage = document.getElementById("mainImage");
+        mainImage.src = imageUrl;
+      }
     </script>
   </body>
 </html>

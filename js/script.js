@@ -1,9 +1,7 @@
 const header = document.querySelector(".header");
 
-// Get the offset position of the header
 const sticky = header.offsetTop;
 
-// Add a scroll event listener
 window.addEventListener("scroll", () => {
   if (window.pageYOffset > sticky) {
     header.classList.add("sticky");
@@ -28,8 +26,6 @@ hamburger.addEventListener("click", () => {
   navbar.classList.toggle("d-flex");
 });
 
-// active memu
-
 const navLinks = document.querySelectorAll(".nav-links li a"); // Select all <a> elements within <li>
 
 navLinks.forEach((link) => {
@@ -41,24 +37,17 @@ navLinks.forEach((link) => {
   });
 });
 
-//card
-// Fetch data from the API
-
-// Get all the accordion headers
 const headers = document.querySelectorAll(".accordion-header");
 
 headers.forEach((header) => {
   header.addEventListener("click", function (event) {
-    // Prevent propagation to parent accordion
     event.stopPropagation();
 
-    const content = this.nextElementSibling; // Content comes after the header
-    const arrow = this.querySelector(".arrow"); // Try to find the arrow in the header
+    const content = this.nextElementSibling;
+    const arrow = this.querySelector(".arrow");
 
-    // Check if the clicked header is already active
     const isActive = this.classList.contains("active");
 
-    // Close only the sibling headers within the same parent accordion
     const parentAccordion = this.closest(".accordion");
     const siblingHeaders =
       parentAccordion.querySelectorAll(".accordion-header");
@@ -71,42 +60,37 @@ headers.forEach((header) => {
         otherContent.style.display = "none";
         otherHeader.classList.remove("active");
 
-        // Reset the arrow if it exists
         if (otherArrow) {
           otherArrow.innerHTML =
-            '<img src="images/down-arrow.png" alt="arrow down" />'; // Reset arrow
+            '<img src="images/down-arrow.png" alt="arrow down" />';
         }
       }
     });
 
-    // Toggle the clicked section
     if (isActive) {
-      content.style.display = "none"; // If already active, close the content
-      this.classList.remove("active"); // Remove active class
+      content.style.display = "none";
+      this.classList.remove("active");
 
       // Reset the arrow if it exists
       if (arrow) {
         arrow.innerHTML =
-          '<img src="images/down-arrow.png" alt="arrow down" />'; // Reset arrow
+          '<img src="images/down-arrow.png" alt="arrow down" />';
       }
     } else {
-      content.style.display = "block"; // Show the content
-      this.classList.add("active"); // Add active class
+      content.style.display = "block";
+      this.classList.add("active");
 
-      // Change the arrow if it exists
       if (arrow) {
-        arrow.innerHTML = '<img src="images/up-arrow.png" alt="arrow up" />'; // Change arrow to up
+        arrow.innerHTML = '<img src="images/up-arrow.png" alt="arrow up" />';
       }
     }
   });
 });
 
-//form
 document.addEventListener("DOMContentLoaded", function () {
   const countrySelect = document.getElementById("country");
   const stateSelect = document.getElementById("state");
 
-  // Static list of countries
   const countries = [
     "United States",
     "Canada",

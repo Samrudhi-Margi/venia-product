@@ -14,36 +14,6 @@ let currentPage = 1;
 const productsPerPage = 10;
 
 // Fetch products from the fake API
-// fetch("https://fakestoreapi.com/products")
-//   .then((response) => response.json())
-//   .then((data) => {
-//     // Adding mock availability data
-//     data = data.map((product) => {
-//       product.available = Math.random() < 0.7; // 70% chance of being in stock
-//       return product;
-//     });
-
-//     allProducts = data;
-//     filteredProducts = data;
-//     loadCategories();
-//     displayProducts();
-//     updateResultCount();
-//   })
-//   .catch((error) => console.error("Error fetching products:", error));
-
-// Load categories for filter
-// function loadCategories() {
-//   const categories = [
-//     ...new Set(allProducts.map((product) => product.category)),
-//   ];
-//   const categorySelect = document.getElementById("category-filter");
-//   categories.forEach((category) => {
-//     const option = document.createElement("option");
-//     option.value = category;
-//     option.textContent = category;
-//     categorySelect.appendChild(option);
-//   });
-// }
 
 const getProducts = async (id) => {
   console.log(id);
@@ -91,6 +61,8 @@ const getCategory = () => {
 };
 
 getCategory();
+
+// Load categories for filter
 
 // Display products with pagination
 function displayProducts() {
@@ -162,17 +134,6 @@ function updatePagination() {
   // Update page number
   currentPageElem.textContent = `Page ${currentPage} of ${totalPages}`;
 }
-
-// Filter by category
-// document.getElementById("category-filter").addEventListener("change", (e) => {
-//   const selectedCategory = e.target.value;
-//   filteredProducts = selectedCategory
-//     ? allProducts.filter((product) => product.category === selectedCategory)
-//     : allProducts;
-//   currentPage = 1;
-//   displayProducts();
-//   updateResultCount();
-// });
 
 // Filter by category
 
