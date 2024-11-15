@@ -23,19 +23,19 @@
             <span></span>
           </div>
           <div class="logo">
-            <a href="#">Venia</a>
+            <a href="index.html">Venia</a>
           </div>
           <nav class="navbar">
             <ul class="nav-links">
               <li><a href="index.html">Home</a></li>
-              <li><a href="category.html">Women</a></li>
-              <li><a href="#">Men</a></li>
-              <li><a href="#">Electronics</a></li>
-              <li><a href="#">Jewellery</a></li>
+              <li><a href="category.html?catId=wc">Women</a></li>
+              <li><a href="category.html?catId=mc">Men</a></li>
+              <li><a href="category.html?catId=e">Electronics</a></li>
+              <li><a href="category.html?catId=j">Jewellery</a></li>
             </ul>
           </nav>
           <div class="header__cart">
-            <a href="#cart" class="header__cart-link">
+            <a href="category.html" class="header__cart-link">
               <!-- <i class="fas fa-shopping-cart header__cart-icon"></i>  -->
               <!-- <img src="images/shopping_bag_icon.svg" alt="cart"> -->
               <?xml version="1.0" ?><svg
@@ -65,7 +65,7 @@
           <div class="row">
             <h2 class="cart-title">Your Shopping Bag</h2>
             <div class="cart-container">
-              <div class="column9">
+              <div class="column8">
                 <div class="cart-items">
                   <div id="cart-items-list">
                     <!-- Cart items will be dynamically added here -->
@@ -124,7 +124,7 @@
                   </div>
                 </div>
               </div>
-              <div class="column3">
+              <div class="column4">
                 <div class="cart-summary">
                   <h3>Price Summary</h3>
                   <div class="summary-item">
@@ -152,7 +152,11 @@
                     <p id="total">$0.00</p>
                   </div>
                   <div class="checkout-buttons">
-                    <button id="checkout-btn" class="btn btn-primary">
+                    <button
+                      id="checkout-btn"
+                      class="btn btn-primary"
+                      onclick="window.location.href = 'checkout-step1.html';"
+                    >
                       <?xml version="1.0" ?><svg
                         class="feather feather-lock"
                         fill="none"
@@ -231,16 +235,16 @@
               </div>
             </div>
           </div>
-          <div class="footer-bottom">
-            <div class="logo">
-              <a href="#">Venia</a>
-            </div>
-            <p>© Company Name Address Ave, City Name, State ZIP</p>
-            <div class="footer-links">
-              <a href="#">Terms of Use</a>
-              <a href="#">Privacy Policy</a>
-            </div>
-          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="logo">
+          <a href="index.html">Venia</a>
+        </div>
+        <p>© Company Name Address Ave, City Name, State ZIP</p>
+        <div class="footer-links">
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
         </div>
       </div>
     </footer>

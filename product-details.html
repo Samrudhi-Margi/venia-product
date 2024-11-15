@@ -24,19 +24,19 @@
             <span></span>
           </div>
           <div class="logo">
-            <a href="#">Venia</a>
+            <a href="index.html">Venia</a>
           </div>
           <nav class="navbar">
             <ul class="nav-links">
               <li><a href="index.html">Home</a></li>
-              <li><a href="category.html">Women</a></li>
-              <li><a href="#">Men</a></li>
-              <li><a href="#">Electronics</a></li>
-              <li><a href="#">Jewellery</a></li>
+              <li><a href="category.html?catId=wc">Women</a></li>
+              <li><a href="category.html?catId=mc">Men</a></li>
+              <li><a href="category.html?catId=e">Electronics</a></li>
+              <li><a href="category.html?catId=j">Jewellery</a></li>
             </ul>
           </nav>
           <div class="header__cart">
-            <a href="#cart" class="header__cart-link">
+            <a href="category.html" class="header__cart-link">
               <!-- <i class="fas fa-shopping-cart header__cart-icon"></i>  -->
               <!-- <img src="images/shopping_bag_icon.svg" alt="cart"> -->
               <?xml version="1.0" ?><svg
@@ -64,8 +64,16 @@
       <section class="product-details-section">
         <div class="container">
           <div class="row">
+            <div class="product-label">
+              <div class="breadcrumb">
+                <a href="index.html">Home</a> / <a href="#">Women's</a> /
+                <span>Outerwear</span>
+              </div>
+            </div>
             <div class="product-details">
+             
               <div class="product-images column6">
+              
                 <div class="thumbnail-gallery">
                   <img
                     src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
@@ -93,7 +101,7 @@
                 </div>
               </div>
               <div class="product-info column6">
-                <div class="breadcrumb">
+                <div class="breadcrumb bc-desk">
                   <a href="index.html">Home</a> / <a href="#">Women's</a> /
                   <span>Outerwear</span>
                 </div>
@@ -110,16 +118,23 @@
                 <!-- Quantity Control -->
                 <div class="quantity-control">
                   <p>Quantity</p>
-                  <div>
+                  <!-- <div>
                     <button id="decreaseQuantity">-</button>
                     <span id="quantity">1</span>
                     <button id="increaseQuantity">+</button>
-                  </div>
+                  </div> -->
+                  <div class="quantity-control">
+                    <button class="decrease-quantity">-</button>
+                    <span class="item-quantity"><input type="number" value="${
+                      item.quantity
+                    }" min="1"></span>
+                    <button class="increase-quantity">+</button>
+                </div>
                 </div>
 
                 <!-- Actions -->
                 <div class="">
-                  <button id="addToCart" class="btn btn-primary addtocart" onclick="window.location.href = 'checkout-step1.html';">
+                  <button id="addToCart" class="btn btn-primary addtocart" onclick="window.location.href = 'shopping.html';">
                     Add to Cart
                   </button>
                 </div>
@@ -267,16 +282,16 @@
               </div>
             </div>
           </div>
-          <div class="footer-bottom">
-            <div class="logo">
-              <a href="#">Venia</a>
-            </div>
-            <p>© Company Name Address Ave, City Name, State ZIP</p>
-            <div class="footer-links">
-              <a href="#">Terms of Use</a>
-              <a href="#">Privacy Policy</a>
-            </div>
-          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="logo">
+          <a href="index.html">Venia</a>
+        </div>
+        <p>© Company Name Address Ave, City Name, State ZIP</p>
+        <div class="footer-links">
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
         </div>
       </div>
     </footer>

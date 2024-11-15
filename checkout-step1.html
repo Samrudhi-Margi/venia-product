@@ -23,19 +23,19 @@
             <span></span>
           </div>
           <div class="logo">
-            <a href="#">Venia</a>
+            <a href="index.html">Venia</a>
           </div>
           <nav class="navbar">
             <ul class="nav-links">
               <li><a href="index.html">Home</a></li>
-              <li><a href="category.html">Women</a></li>
-              <li><a href="#">Men</a></li>
-              <li><a href="#">Electronics</a></li>
-              <li><a href="#">Jewellery</a></li>
+              <li><a href="category.html?catId=wc">Women</a></li>
+              <li><a href="category.html?catId=mc">Men</a></li>
+              <li><a href="category.html?catId=e">Electronics</a></li>
+              <li><a href="category.html?catId=j">Jewellery</a></li>
             </ul>
           </nav>
           <div class="header__cart">
-            <a href="#cart" class="header__cart-link">
+            <a href="category.html" class="header__cart-link">
               <!-- <i class="fas fa-shopping-cart header__cart-icon"></i>  -->
               <!-- <img src="images/shopping_bag_icon.svg" alt="cart"> -->
               <?xml version="1.0" ?><svg
@@ -253,7 +253,7 @@
                       </div>
                       <div class="flex-center btn-mt">
                         <button
-                          type="submit"
+                          type="button"
                           class="btn btn-primary-outline form-btn"
                         >
                           CONTINUE TO PAYMENT
@@ -264,130 +264,169 @@
                 </div>
 
                 <!-- Accordion Item 3: Apply Gift Card -->
-                <div class="accordion-item">
-                  <div class="accordion-header" id="gift-cards-header">
-                    <div class="accordion-header-content">
-                      <span>3. Payment Information</span>
+                <div class="accordion form-full">
+                  <!-- Accordion Item 3: Apply Gift Card -->
+                  <div class="accordion-item">
+                    <div class="accordion-header" id="gift-cards-header">
+                      <div class="accordion-header-content">
+                        <span>3. Payment Information</span>
+                      </div>
                     </div>
-                  </div>
-                  <div class="accordion-content" id="gift-cards-content">
-                    <div class="accordion">
-                      <div class="accordion-item">
-                        <div class="accordion-header" id="payment-method">
-                          <div class="accordion-header-content">
-                            <!-- <span> <div class="form-radio">
-                            <div class="radio">
-                            <input
-                                type="radio"
-                                name="credit-card"
-                                value="standard"
-                                checked
-                            />
-                            <label> Credit Card </label>
-                            </div></span> -->
-                            <span> Credit Card</span>
+                    <div class="accordion-content" id="gift-cards-content">
+                      <div class="accordion">
+                        <div class="accordion-item">
+                          <div class="accordion-header p15" id="payment-method">
+                            <div class="accordion-header-content">
+                              <!-- <span> <div class="form-radio">
+                              <div class="radio">
+                              <input
+                                  type="radio"
+                                  name="credit-card"
+                                  value="standard"
+                                  checked
+                              />
+                              <label> Credit Card </label>
+                              </div></span> -->
+                              <span>
+                                <input
+                                  type="radio"
+                                  name="payment"
+                                  value="CreditCard"
+                                />
+                                <label>Credit Card</label></span
+                              >
+                            </div>
                           </div>
-                        </div>
-                        <div class="accordion-content" id="payment-content">
-                          <form>
-                            <div class="form-row">
-                              <div class="form-group half-width">
-                                <label for="card-name">Name on Card</label>
-                                <input
-                                  type="text"
-                                  id="card-name"
-                                  name="card-name"
-                                  placeholder="Name on Card"
-                                  required
-                                />
-                              </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="form-group half-width">
-                                <label for="card-number"
-                                  >Credit Card Number</label
-                                >
-                                <input
-                                  type="text"
-                                  id="card-number"
-                                  name="card-number"
-                                  placeholder="1234 5678 9012 3456"
-                                  required
-                                />
-                              </div>
-                            </div>
-
-                            <div class="form-row">
-                              <div class="form-group">
-                                <label for="exp-date">Expiration Date</label>
-                                <input
-                                  type="date"
-                                  id="exp-date"
-                                  name="exp-date"
-                                  placeholder="MM/YY"
-                                  required
-                                />
-                              </div>
-                              <div class="form-group">
-                                <label for="cvv">CVV</label>
-                                <input
-                                  type="number"
-                                  id="cvv"
-                                  name="cvv"
-                                  placeholder="CVV"
-                                  required
-                                /><i
-                                  class="fa-regular fa-circle-question que"
-                                ></i>
-                              </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="form-group">
-                                <label
-                                  ><input
-                                    type="checkbox"
-                                    name="billing-same"
-                                    id="billing-same"
+                          <div class="accordion-content" id="payment-content">
+                            <form>
+                              <div class="form-row">
+                                <div class="form-group half-width">
+                                  <label for="card-name">Name on Card</label>
+                                  <input
+                                    type="text"
+                                    id="card-name"
+                                    name="card-name"
+                                    placeholder="Name on Card"
+                                    required
                                   />
-                                  Billing address same as shipping
-                                  address</label
-                                >
+                                </div>
                               </div>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
+                              <div class="form-row">
+                                <div class="form-group half-width">
+                                  <label for="card-number"
+                                    >Credit Card Number</label
+                                  >
+                                  <input
+                                    type="text"
+                                    id="card-number"
+                                    name="card-number"
+                                    placeholder="1234 5678 9012 3456"
+                                    required
+                                  />
+                                </div>
+                              </div>
 
-                      <div class="accordion-item">
-                        <div class="accordion-header" id="paypal-header">
-                          <div class="accordion-header-content">
-                            <span>
-                              PayPal
-                              <!-- <div class="form-radio">
-                            <div class="radio">
-                            <input
-                                type="radio"
-                                name="credit-card-pay"
-                                value="paypal"
-                            />
-                            <label> PayPal </label>
-                            </div>
-                        </div> -->
-                            </span>
+                              <div class="form-row">
+                                <div class="form-group">
+                                  <label for="exp-date">Expiration Date</label>
+                                  <input
+                                    type="date"
+                                    id="exp-date"
+                                    name="exp-date"
+                                    placeholder="MM/YY"
+                                    required
+                                  />
+                                </div>
+                                <div class="form-group">
+                                  <label for="cvv">CVV</label>
+                                  <div class="input-wrapper">
+                                    <input
+                                      type="number"
+                                      id="cvv"
+                                      name="cvv"
+                                      placeholder="CVV"
+                                      required
+                                    /><i
+                                      class="fa-regular fa-circle-question que"
+                                    ></i>
+                                  </div>
+                                </div>
+
+                                <!-- <div class="form-group">
+                                  <label for="cvv">CVV</label>
+                                  <div class="input-wrapper">
+                                    <input
+                                      type="number"
+                                      id="cvv"
+                                      name="cvv"
+                                      placeholder="CVV"
+                                      required
+                                    />
+                                    <i
+                                      class="fa-regular fa-circle-question que"
+                                    ></i>
+                                  </div>
+                                </div> -->
+                              </div>
+                              <div class="form-row">
+                                <div class="form-group">
+                                  <label
+                                    ><input
+                                      type="checkbox"
+                                      name="billing-same"
+                                      id="billing-same"
+                                    />
+                                    Billing address same as shipping
+                                    address</label
+                                  >
+                                </div>
+                              </div>
+                            </form>
                           </div>
                         </div>
-                        <div class="accordion-content" id="paypal-content">
-                          <form></form>
+
+                        <div class="accordion-item">
+                          <div class="accordion-header p15" id="paypal-header">
+                            <div class="accordion-header-content">
+                              <!-- <span> <div class="form-radio">
+                              <div class="radio">
+                              <input
+                                  type="radio"
+                                  name="credit-card"
+                                  value="standard"
+                                  checked
+                              />
+                              <label> Credit Card </label>
+                              </div></span> -->
+                              <span>
+                                <input
+                                  type="radio"
+                                  name="payment"
+                                  value="paypal"
+                                />
+                                <label>PayPal</label></span
+                              >
+                            </div>
+                          </div>
+                          <div class="accordion-content" id="paypal-content">
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Totam obcaecati, aliquam cum necessitatibus
+                              nam eius ad tenetur sit quam dignissimos corporis,
+                              mollitia labore, porro rerum praesentium deleniti
+                              explicabo error odio.
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="flex-center btn-mt">
-                      <button
-                        type="submit"
-                        class="btn btn-primary-outline form-btn"
-                      >
-                        CONTINUE TO REVIEW ORDER
-                      </button>
+                      <div class="flex-center btn-mt">
+                        <button
+                          type="submit"
+                          class="btn btn-primary-outline form-btn"
+                        >
+                          CONTINUE TO REVIEW ORDER
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -471,19 +510,102 @@
               </div>
             </div>
           </div>
-          <div class="footer-bottom">
-            <div class="logo">
-              <a href="#">Venia</a>
-            </div>
-            <p>© Company Name Address Ave, City Name, State ZIP</p>
-            <div class="footer-links">
-              <a href="#">Terms of Use</a>
-              <a href="#">Privacy Policy</a>
-            </div>
-          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="logo">
+          <a href="index.html">Venia</a>
+        </div>
+        <p>© Company Name Address Ave, City Name, State ZIP</p>
+        <div class="footer-links">
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
         </div>
       </div>
     </footer>
     <script src="js/script.js"></script>
+    <script>
+      // Static list of states (for example, US states) for when the country is selected
+      const usStates = [
+        "Alabama",
+        "Alaska",
+        "Arizona",
+        "Arkansas",
+        "California",
+        "Colorado",
+        "Connecticut",
+        "Delaware",
+        "Florida",
+        "Georgia",
+        "Hawaii",
+        "Idaho",
+        "Illinois",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Kentucky",
+        "Louisiana",
+        "Maine",
+        "Maryland",
+        "Massachusetts",
+        "Michigan",
+        "Minnesota",
+        "Mississippi",
+        "Missouri",
+        "Montana",
+        "Nebraska",
+        "Nevada",
+        "New Hampshire",
+        "New Jersey",
+        "New Mexico",
+        "New York",
+        "North Carolina",
+        "North Dakota",
+        "Ohio",
+        "Oklahoma",
+        "Oregon",
+        "Pennsylvania",
+        "Rhode Island",
+        "South Carolina",
+        "South Dakota",
+        "Tennessee",
+        "Texas",
+        "Utah",
+        "Vermont",
+        "Virginia",
+        "Washington",
+        "West Virginia",
+        "Wisconsin",
+        "Wyoming",
+      ];
+
+      document.addEventListener("DOMContentLoaded", function () {
+        let countrySelect = document.getElementById("country");
+
+        countrySelect.addEventListener("change", function () {
+          const selectedCountry = countrySelect.value;
+
+          // Clear the state dropdown
+          stateSelect.innerHTML =
+            '<option value="" disabled selected>Select a state</option>';
+
+          // If the selected country is 'United States', populate with US states
+          if (selectedCountry === "United States") {
+            usStates.forEach((state) => {
+              const option = document.createElement("option");
+              option.value = state; // Set the option's value to the state name
+              option.textContent = state; // Set the option text to the state name
+              stateSelect.appendChild(option); // Append the option to the dropdown
+            });
+          } else {
+            // If any other country is selected, you can choose to populate with default options or leave empty
+            const option = document.createElement("option");
+            option.value = "";
+            option.textContent = "No states available";
+            stateSelect.appendChild(option);
+          }
+        });
+      });
+    </script>
   </body>
 </html>

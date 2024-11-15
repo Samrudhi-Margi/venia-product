@@ -1,39 +1,96 @@
+let params = new URLSearchParams(document.location.search);
+var catId = params.get("catId");
+
+const catObj = {
+  mc: "men's clothing",
+  wc: "women's clothing",
+  j: "jewelery",
+  e: "electronics",
+};
+
 let allProducts = [];
 let filteredProducts = [];
 let currentPage = 1;
 const productsPerPage = 10;
 
 // Fetch products from the fake API
-fetch("https://fakestoreapi.com/products")
-  .then((response) => response.json())
-  .then((data) => {
-    // Adding mock availability data
-    data = data.map((product) => {
-      product.available = Math.random() < 0.7; // 70% chance of being in stock
-      return product;
-    });
+// fetch("https://fakestoreapi.com/products")
+//   .then((response) => response.json())
+//   .then((data) => {
+//     // Adding mock availability data
+//     data = data.map((product) => {
+//       product.available = Math.random() < 0.7; // 70% chance of being in stock
+//       return product;
+//     });
 
-    allProducts = data;
-    filteredProducts = data;
-    loadCategories();
-    displayProducts();
-    updateResultCount();
-  })
-  .catch((error) => console.error("Error fetching products:", error));
+//     allProducts = data;
+//     filteredProducts = data;
+//     loadCategories();
+//     displayProducts();
+//     updateResultCount();
+//   })
+//   .catch((error) => console.error("Error fetching products:", error));
 
 // Load categories for filter
-function loadCategories() {
-  const categories = [
-    ...new Set(allProducts.map((product) => product.category)),
-  ];
-  const categorySelect = document.getElementById("category-filter");
-  categories.forEach((category) => {
-    const option = document.createElement("option");
-    option.value = category;
-    option.textContent = category;
-    categorySelect.appendChild(option);
-  });
-}
+// function loadCategories() {
+//   const categories = [
+//     ...new Set(allProducts.map((product) => product.category)),
+//   ];
+//   const categorySelect = document.getElementById("category-filter");
+//   categories.forEach((category) => {
+//     const option = document.createElement("option");
+//     option.value = category;
+//     option.textContent = category;
+//     categorySelect.appendChild(option);
+//   });
+// }
+
+const getProducts = async (id) => {
+  console.log(id);
+
+  fetch(`https://fakestoreapi.com/products/category/${catObj[id]}`)
+    .then((response) => response.json())
+    .then((data) => {
+      // Adding mock availability data
+      data = data.map((product) => {
+        product.available = Math.random() < 0.7; // 70% chance of being in stock
+        return product;
+      });
+
+      allProducts = data;
+      filteredProducts = data;
+      // loadCategories();
+      displayProducts();
+      updateResultCount();
+    })
+    .catch((error) => console.error("Error fetching products:", error));
+};
+
+getProducts(catId);
+
+const getCategory = () => {
+  fetch(`https://fakestoreapi.com/products/categories`)
+    .then((response) => response.json())
+    .then((categoriesArr) => {
+      console.log(categoriesArr);
+
+      // const categoryRadios = ;
+      let categoryOptions = "";
+      if (categoriesArr.length > 0) {
+        categoriesArr.map((category) => {
+          categoryOptions += `<div class="category-filter">
+          <input type="radio" name="category" id="${category}" value="${category}"></input>
+          <label for="${category}">${category}</label>
+          </div>`;
+        });
+      }
+
+      document.getElementById("categoryFilter").innerHTML = categoryOptions;
+    })
+    .catch((error) => console.error("Error fetching products:", error));
+};
+
+getCategory();
 
 // Display products with pagination
 function displayProducts() {
@@ -64,6 +121,27 @@ function displayProducts() {
   updatePagination();
 }
 
+function dynamicMenuLinks() {
+  let menuLinks = document.getElementById("navLinks");
+  menuLinks.innerHTML = `<li><a href="index.html" class="${
+    catId == "" ? "active" : ""
+  }">Home</a></li>
+  <li><a href="category.html?catId=wc" class="${
+    catId == "wc" ? "active" : ""
+  }">Women</a></li>
+  <li><a href="category.html?catId=mc" class="${
+    catId == "mc" ? "active" : ""
+  }">Men</a></li>
+  <li><a href="category.html?catId=e" class="${
+    catId == "e" ? "active" : ""
+  }">Electronics</a></li>
+  <li><a href="category.html?catId=j" class="${
+    catId == "j" ? "active" : ""
+  }">Jewellery</a></li>`;
+}
+
+dynamicMenuLinks();
+
 // Update result count
 function updateResultCount() {
   const resultCount = document.getElementById("result-count");
@@ -86,15 +164,37 @@ function updatePagination() {
 }
 
 // Filter by category
-document.getElementById("category-filter").addEventListener("change", (e) => {
-  const selectedCategory = e.target.value;
-  filteredProducts = selectedCategory
-    ? allProducts.filter((product) => product.category === selectedCategory)
-    : allProducts;
-  currentPage = 1;
-  displayProducts();
-  updateResultCount();
+// document.getElementById("category-filter").addEventListener("change", (e) => {
+//   const selectedCategory = e.target.value;
+//   filteredProducts = selectedCategory
+//     ? allProducts.filter((product) => product.category === selectedCategory)
+//     : allProducts;
+//   currentPage = 1;
+//   displayProducts();
+//   updateResultCount();
+// });
+
+// Filter by category
+
+let catFilterWrapper = document.getElementById("categoryFilter");
+
+let radioElem = catFilterWrapper.querySelector("input[type='radio']");
+radioElem.addEventListener("click", function () {
+  alert("wwe");
 });
+
+// let filterRadio = document.querySelector('input[name="category"]');
+// filterRadio.addEventListener("click", (e) => {
+//   console.log(e.target);
+
+//   const selectedCategory = e.target.value;
+
+//   console.log(selectedCategory);
+
+//   // currentPage = 1;
+//   // displayProducts();
+//   // updateResultCount();
+// });
 
 // Filter by price
 document.getElementById("price-filter").addEventListener("input", (e) => {

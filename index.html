@@ -23,19 +23,19 @@
             <span></span>
           </div>
           <div class="logo">
-            <a href="#">Venia</a>
+            <a href="index.html">Venia</a>
           </div>
           <nav class="navbar">
             <ul class="nav-links">
               <li><a href="#" class="active">Home</a></li>
-              <li><a href="category.html">Women</a></li>
-              <li><a href="#">Men</a></li>
-              <li><a href="#">Electronics</a></li>
-              <li><a href="#">Jewellery</a></li>
+              <li><a href="category.html?catId=wc">Women</a></li>
+              <li><a href="category.html?catId=mc">Men</a></li>
+              <li><a href="category.html?catId=e">Electronics</a></li>
+              <li><a href="category.html?catId=j">Jewellery</a></li>
             </ul>
           </nav>
           <div class="header__cart">
-            <a href="#cart" class="header__cart-link">
+            <a href="category.html" class="header__cart-link">
               <!-- <i class="fas fa-shopping-cart header__cart-icon"></i>  -->
               <!-- <img src="images/shopping_bag_icon.svg" alt="cart"> -->
               <?xml version="1.0" ?><svg
@@ -101,9 +101,14 @@
       <button class="arrows next" onclick="changeSlide(1)"></button>
       <div class="slider-dots"></div>
     </section>
-    <section class="card-container">
+    <!-- <section class="card-container">
       <div class="container">
         <div class="row" id="card-container"></div>
+      </div>
+    </section> -->
+    <section class="card-container">
+      <div class="container">
+        <div class="row" id="cardContainer"></div>
       </div>
     </section>
     <section class="collection">
@@ -215,19 +220,20 @@
               </div>
             </div>
           </div>
-          <div class="footer-bottom">
-            <div class="logo">
-              <a href="#">Venia</a>
-            </div>
-            <p>© Company Name Address Ave, City Name, State ZIP</p>
-            <div class="footer-links">
-              <a href="#">Terms of Use</a>
-              <a href="#">Privacy Policy</a>
-            </div>
-          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="logo">
+          <a href="index.html">Venia</a>
+        </div>
+        <p>© Company Name Address Ave, City Name, State ZIP</p>
+        <div class="footer-links">
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
         </div>
       </div>
     </footer>
     <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
